@@ -10,10 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_155305) do
+ActiveRecord::Schema.define(version: 2019_11_25_160253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text "description"
+    t.date "date"
+    t.bigint "idea_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["idea_id"], name: "index_comments_on_idea_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.date "date"
+    t.string "token"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["token"], name: "index_events_on_token", unique: true
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "ideas", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "url"
+    t.boolean "status"
+    t.bigint "user_id", null: false
+    t.bigint "chosen_by_id", null: false
+    t.bigint "list_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chosen_by_id"], name: "index_ideas_on_chosen_by_id"
+    t.index ["list_id"], name: "index_ideas_on_list_id"
+    t.index ["user_id"], name: "index_ideas_on_user_id"
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.string "title"
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_lists_on_event_id"
+    t.index ["user_id"], name: "index_lists_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +74,12 @@ ActiveRecord::Schema.define(version: 2019_11_25_155305) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "ideas"
+  add_foreign_key "comments", "users"
+  add_foreign_key "events", "users"
+  add_foreign_key "ideas", "lists"
+  add_foreign_key "ideas", "users"
+  add_foreign_key "ideas", "users", column: "chosen_by_id"
+  add_foreign_key "lists", "events"
+  add_foreign_key "lists", "users"
 end
