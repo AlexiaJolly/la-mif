@@ -1,4 +1,7 @@
-<li>
-  <%= @lists %>
-  <p>Tests</p>
-</li>
+<div class="container">
+  <li>
+    <%= @lists %>
+  </li>
+    <%= link_to "Create a list", new_list_path, class: "btn btn-primary" %>
+</div>
+
