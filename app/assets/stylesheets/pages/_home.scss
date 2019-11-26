@@ -1,1 +1,69 @@
 // Specific CSS for your home-page
+
+body {
+  background: #F2DCC5;
+}
+
+.text-container {
+
+  position: absolute;
+  width: 632px;
+  height: 385px;
+  left: 137px;
+  top: 237px;
+
+  h1 {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 96px;
+    line-height: 110px;
+    color: #1B2644;
+  }
+  h3 {
+    font-family: Lora;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 61px;
+    color: #1E2B4B;
+  }
+  p {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    color: #1B2748;
+  }
+}
+
+
+.image-container {
+    position: absolute;
+    width: 641px;
+    height: 528px;
+    left: 769px;
+    top: 192px;
+    background: url(xmas_home.jpg);
+}
+
+.button-container {
+  display: flex;
+}
+
+@media only screen and (max-width: 900px) {
+  .home-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .image-container {
+    position: relative;
+  }
+  .text-container {
+    position: relative;
+  }
+  .button-container {
+
+  }
+}
