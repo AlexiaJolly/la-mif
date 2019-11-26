@@ -25,6 +25,12 @@ thomas = User.create!(
   email: 'thomas.durand@gmail.com',
   password: 'azertyazerty')
 
+florence = User.create!(
+  email: 'florance.durand@gmail.com',
+  password: 'ertyuiop')
+
+
+
 puts 'Finished user'
 
 # image = URI.open('https://res.cloudinary.com/dwu8ckzto/image/upload/v1574171146/canape.jpg')
@@ -57,16 +63,20 @@ puts 'Finished user'
 
   puts 'Creating ideas...'
 
-  Echarpe = Idea.create!(
-    title:       "echarpe rouge",
-    description: "grande echarpe en laine rouge",
+  photo_1 = URI.open("https://res.cloudinary.com/alexiajjjj/image/upload/v1574787785/La-mif/echarpe_grise_kbdiqu.jpg")
+  echarpe = Idea.create!(
+    title:       "echarpe grise",
+    description: "grande echarpe en laine gris clair",
     url:         " ",
     list:       listenoel2019,
     user:        marie,
     chosen_by:   paulette,
     status:      true)
-
-   Velo = Idea.create!(
+  echarpe.save
+  echarpe.photo.attach(io: photo_1, filename: 'echarpe_grise.jpg', content_type: 'image/jpg')
+# Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
+   photo_2 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574786878/La-mif/velo_ville_tphbip.jpg")
+   velo = Idea.create!(
     title:       "velo de ville",
     description: "velo de ville cadre taille 54",
     url:         " ",
@@ -74,17 +84,22 @@ puts 'Finished user'
     user:        marie,
     chosen_by:   thomas,
     status:     :true)
+   velo.photo.attach(io: photo_2, filename: 'velo_ville_tphbip.jpg', content_type: 'image/jpg')
 
-   Gants = Idea.create!(
+
+   photo_3 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574786659/La-mif/gants_cashemire_hmxwb2.jpg")
+   gants = Idea.create!(
     title:       "Gants en cashemire",
-    description: "Gants en cashemire couleur noire",
+    description: "Gants en cashemire couleur bleue",
     url:         " ",
     user:        marie,
     list:        listenoel2019,
     chosen_by:   paulette,
     status:     :true)
+   gants.photo.attach(io: photo_3, filename: 'gants_cashemire_hmxwb2.jpg', content_type: 'image/jpg')
 
-   Casque = Idea.create!(
+   photo_4 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574786555/La-mif/casque_audio_qpjfyp.jpg")
+   casque = Idea.create!(
     title:       "Casque de musique",
     description: "Casque de musique blutooth",
     url:         " ",
@@ -92,8 +107,11 @@ puts 'Finished user'
     list:        listenoel2019,
     chosen_by:   paulette,
     status:     :true)
+   casque.photo.attach(io: photo_4, filename: 'casque_audio_qpjfyp.jpg', content_type: 'image/jpg')
 
-   Jeu = Idea.create!(
+
+   photo_5 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574786932/La-mif/jeu_video_gtcduy.jpg")
+   jeu = Idea.create!(
     title:       "Jeu video",
     description: "Jeu video pour la PS4: Blacksad ou Citadel",
     url:         " ",
@@ -101,15 +119,19 @@ puts 'Finished user'
     list:       listenoel2019,
     chosen_by:   paulette,
     status:     :true)
+   jeu.photo.attach(io: photo_5, filename: 'jeu_video_gtcduy.jpg', content_type: 'image/jpg')
 
-   Goncourt = Idea.create!(
+
+   photo_6 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574787389/La-mif/livre_renaudot_dwutqp.png")
+   renaudot = Idea.create!(
     title:       "Livre",
-    description: "Roman",
+    description: "Prix renaudot 2019",
     url:         " ",
     user:        marie,
     list:        listedepapi,
     chosen_by:   thomas,
     status:     :true)
+   renaudot.photo.attach(io: photo_6, filename: 'livre_renaudot_dwutqp.jpg', content_type: 'image/jpg')
 
 puts 'Finished lists...'
 
