@@ -1,10 +1,11 @@
 
 .button-coral {
-  position: absolute;
+  /*position: absolute;*/
   width: 216px;
   height: 65px;
-  left: 134px;
-  top: 676px;
+ /* left: 134px;
+  top: 676px;*/
+  margin: 8px;
   background: #FD9F87;
   border-radius: 10px;
   display: flex;
@@ -23,11 +24,12 @@
 }
 
 .button-tiffany {
-  position: absolute;
+  /*position: absolute;*/
   width: 318px;
   height: 65px;
-  left: 368px;
-  top: 676px;
+  /*left: 368px;
+  top: 676px;*/
+  margin: 8px;
   background: #8FC6C1;
   border-radius: 10px;
   display: flex;
