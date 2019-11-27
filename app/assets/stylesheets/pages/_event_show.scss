@@ -1,0 +1,56 @@
+.Title_event {
+font-family: 'Ubuntu';
+position: absolute;
+width: 632px;
+height: 385px;
+left: 137px;
+top: 237px;
+text-align: center;
+color: #F2C164;
+}
+ .Title_event.card-one {
+  position:absolute;
+  width: 40px;
+  left: 427px;
+  top: 252px;
+}
+
+.Title_event.card-two {
+  position:absolute;
+  right: 30px;
+  top: -20px;
+  width: 60px;
+}
+
+.Title_event.card-three {
+
+  right: 16px;
+  top:  20px;
+  width: 40px;
+}
+
+.Title_event.card-four {
+
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.Title_event.card-five{
+
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+
+.avatar-bordered {
+    width: 80px;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border: white 1px solid;
+
+
+}
+
+
