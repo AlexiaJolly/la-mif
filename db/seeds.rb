@@ -39,12 +39,12 @@ puts 'Finished user'
 
   noel2019 = Event.create!(
     name:         'Noël 2019',
-    date:         '23 décembre 2019',
+    date:           Date.today,
     user:          User.first)
 
   anniversaireLouise = Event.create!(
     name:         '21 ans de Louise',
-    date:         '25 février 2020',
+    date:           Date.today,
     user:          User.second)
 
   puts 'Finished events'
