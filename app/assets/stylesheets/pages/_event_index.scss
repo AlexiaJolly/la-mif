@@ -1,8 +1,38 @@
-// .container {
-//   background-color: #F2DCC5;
-// }
+.idea-card-title {
+  background: #FD9F87;
+  height: 64px;
+  border-radius: 4px 4px 0px 0px;
+}
 
 .picture {
   position: absolute;
   bottom: 0;
+}
+.idea-card {
+  background-color: white;
+  border-radius: 4px;
+  width: 400px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.idea-wrapper {
+  margin: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.idea-wrapper-icon {
+}
+.idea-wrapper-text {
+  flex-grow: 1;
+  padding: 5px;
+}
+.idea-wrapper-cta {
+}
+
+.new-event {
+  height: 50px;
+  width: 250px;
+}
+.new-idea-cta{
+  // align-self: flex-start;
 }

@@ -1,8 +1,9 @@
 class EventsController < ApplicationController
   def index
+    # @events = current_user.events
     @events = Event.all
-    @event = Event.new
-    @ideas = Idea.all
+    # @event = Event.new
+    # @ideas = Idea.all
   end
 
   def show
