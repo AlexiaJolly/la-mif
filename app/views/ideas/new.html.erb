@@ -1,0 +1,29 @@
+
+
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+  Enrichir ma liste
+</button>
+
+<!-- Modal -->
+<div class="pop-up-new-product">
+        <h5 class="nouvelle-idee">NOUVELLE IDEE</h5>
+        <div class="topo">
+          <p>Je rentre vite ma nouvelle idée ici !</p>
+        </div>
+
+        <%= simple_form_for [@list, @idea] do |f| %>
+        <div class="form-group">
+          <%= f.input :title, placeholder: 'Titre :', label: false, input_html: { class: 'form-spe' } %>
+        </div>
+        <div class="form-group">
+          <%= f.input :description, placeholder: 'Description :', label: false, input_html: { class: 'form-spe' } %>
+        </div>
+        <div class="form-group">
+          <%= f.input :url, placeholder: 'URL :', label: false, input_html: { class: 'form-spe' } %>
+        </div>
+          <label class="btn btn-primary btn-abricot" for="idea_photo">Ajouter une photo</label>
+          <%= f.input :photo, as: :file, label: false, input_html: { class: "d-none" } %>
+          <%= f.submit "Ajouter mon idée", class: "btn btn-primary btn-bleu" %>
+        <% end %>
+</div>
