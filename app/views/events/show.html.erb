@@ -1,15 +1,58 @@
-<head><link href="https://fonts.googleapis.com/css?family=Lora|Ubuntu&display=swap" rel="stylesheet">
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Lora|Ubuntu&display=swap" rel="stylesheet">
+</head>
 
- </head>
 
 
-<div class="Title_event" >
+<div>
+  <div class="circle-div">
+    <div class="title-event" >
+      <h1><%= @event.name %></h1>
+    </div>
+    <ul class='circle-container'>
+      <li>
+        <%#= link_to lists_path(list) do  %>
+        <div class = 'grow'>
+           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-bordered" data-toggle="modal" data-target="#exampleModal"/>
+        </div>
 
-  <h1><%= @event.name %></h1>
+
+        <%# end %>
+      </li>
+
+      <li>
+        <img src="https://kitt.lewagon.com/placeholder/users/cveneziani"class= "avatar-bordered"/>
+
+      </li>
+
+      <li>
+        <img src= "https://kitt.lewagon.com/placeholder/users/sarahlafer"class= "avatar-bordered">
+
+      </li>
+
+      <li>
+        <img src= "https://kitt.lewagon.com/placeholder/users/arthur-littm"class= "avatar-bordered">
+      </li>
+    </ul>
+  </div>
 </div>
 
-  <div> <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-one avatar-bordered" /> </div>
-  <div> <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-two avatar-bordered" /> </div>
-
-
-
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
