@@ -1,0 +1,78 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Lora|Ubuntu&display=swap" rel="stylesheet">
+</head>
+
+
+
+<div>
+  <div class="circle-div">
+    <div class="title-event" >
+      <h1><%= @event.name %></h1>
+    </div>
+    <ul class='circle-container'>
+
+      <% @lists.each do |list| %>
+        <% if list.event_id == @event.id %>
+
+          <li>
+            <div class='grow'>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-bordered" data-toggle="modal" data-target="#exampleModalCenter"/>
+            </div>
+          </li>
+
+          <!-- BUTTON MODAL -->
+          <button type="button" class="btn btn-primary m-3" data-toggle="modal" data-target="#exampleModalCenter">Voire sa liste!</button>
+
+          <!-- MODAL BOOTSTRAP -->
+
+          <% end %>
+      <% end %>
+
+    </ul>
+  </div>
+</div>
+
+    <% @lists.each do |list| %>
+      <% if list.event_id == @event.id %>
+
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle"><h1><%= list.title %></h1></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-body">
+
+                      <% @ideas.each do |idea| %>
+                        <% if idea.list_id == list.id %>
+
+                          <ul>
+                            <div class="idea-card">
+                              <div class="d-flex align-items-center justify-content-center">
+                                <%= cl_image_tag idea.photo.key, height: 150, width: 150, crop: :fill if idea.photo %>
+                              </div>
+                              <div class="idea-text">
+                                <h4><%= idea.title %></h4>
+                                <p><%= idea.description %></p>
+                              </div>
+                              <a href="/ideas/<%=idea.id%>"><div class="btn btn-primary">Choisir l'idée</div></a>
+                            </div>
+                          </ul>
+
+                        <% end %>
+                      <% end %>
+
+                    <% end %>
+                  <% end %>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
