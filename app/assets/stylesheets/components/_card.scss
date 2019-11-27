@@ -1,0 +1,13 @@
+.idea-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid grey;
+  width: 400px;
+  height: 168px;
+  padding: 8px;
+  img {
+    width: 125px;
+    height: 125px;
+  }
+}
