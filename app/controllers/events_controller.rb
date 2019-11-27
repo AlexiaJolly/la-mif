@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     @event = Event.new
+    @ideas = Idea.all
   end
 
   def show
