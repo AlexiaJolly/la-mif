@@ -9,7 +9,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @lists = List.all
+    @lists = @event.lists
     @ideas = Idea.all
   end
 
