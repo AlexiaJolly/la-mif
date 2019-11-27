@@ -6,6 +6,7 @@
   <% @events.each do |event| %>
     <div class="card m-3" style="width: 18rem;">
       <div class="card-body">
+        <%= cl_image_tag @user.photo.key, height: 150, width: 150, crop: :fill, class: "picture" %>
         <h4 class="card-title"><%= event.name %></h4>
 
         <div class="row d-flex justify-content-center">
@@ -17,7 +18,7 @@
                 <%= link_to "Voir plus", idea.url, class: "btn btn-primary"%>
               </div>
               <div class="d-flex align-items-center justify-content-center">
-              <%= cl_image_tag idea.photos.first.key, height: 150, width: 150, crop: :fill if idea.photos.first %>
+              <%= cl_image_tag idea.photo.key, height: 150, width: 150, crop: :fill %>
               </div>
             </div>
            <% end %>
@@ -65,4 +66,3 @@
     </div>
 
 </div>
-
