@@ -4,6 +4,10 @@ class IdeasController < ApplicationController
     @ideas = Idea.all
   end
 
+  def show
+    @idea = Idea.find(params[:id])
+  end
+
   def new
     @idea = Idea.new
     @list = current_user.lists.find(params[:list_id])

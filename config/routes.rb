@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :ideas, only: [:create]
   end
 
-  resources :ideas, only: [:update]
+  resources :ideas, only: [:update, :show]
 
   # TEMPORARY URLS
 

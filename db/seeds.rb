@@ -13,21 +13,33 @@ List.destroy_all
 Idea.destroy_all
 
 puts 'Creating user...'
+photo_john = URI.open("https://res.cloudinary.com/alexiajjjj/image/upload/v1574872880/_JBU3064-1_John_Schults_v2_rsouhb.jpg" )
+john = User.create!(
+  email: 'john@gmail.com',
+  password: '123456789')
+john.photo.attach(io: photo_john, filename: '_JBU3064-1_John_Schults_v2_rsouhb.jpg', content_type: 'image/jpg')
+john.save
+
+photo_marie = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574873552/_JBU1110-1_Paula_Beltran_2_uznwhi.jpg")
 marie = User.create!(
   email: 'marie@gmail.com',
-  password: '123456789')
-
-paulette = User.create!(
-  email: 'paulette@gmail.com',
   password: 'groseille')
+marie.photo.attach(io: photo_marie, filename: '_JBU1110-1_Paula_Beltran_2_uznwhi.jpg', content_type: 'image/jpg')
+marie.save
 
+photo_thomas = URI.open( "https://res.cloudinary.com/alexiajjjj/image/upload/v1574872874/_JBU2368-1_Pierre_Nicoletti_v2_xobvkz.jpg")
 thomas = User.create!(
   email: 'thomas.durand@gmail.com',
   password: 'azertyazerty')
+thomas.photo.attach(io: photo_thomas, filename: '_JBU2368-1_Pierre_Nicoletti_v2_xobvkz.jpg', content_type: 'image/jpg')
+thomas.save
 
+
+# photo_florence = URI.open (" ")
 florence = User.create!(
   email: 'florance.durand@gmail.com',
   password: 'ertyuiop')
+
 
 
 
@@ -57,7 +69,7 @@ puts 'Finished user'
     event:         Event.first)
 
   listedepapi = List.create!(
-    title:        'Liste de Papi Jacques',
+    title:        'Liste de thomas',
     user:          User.third,
     event:         Event.first)
 
@@ -70,9 +82,9 @@ puts 'Finished user'
     url:         " ",
     list:       listenoel2019,
     user:        marie,
-    chosen_by:   paulette,
+    chosen_by:   john,
     status:      true)
-  echarpe.save
+
   echarpe.photo.attach(io: photo_1, filename: 'echarpe_grise.jpg', content_type: 'image/jpg')
 # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
    photo_2 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574786878/La-mif/velo_ville_tphbip.jpg")
@@ -94,7 +106,7 @@ puts 'Finished user'
     url:         " ",
     user:        marie,
     list:        listenoel2019,
-    chosen_by:   paulette,
+    chosen_by:   john,
     status:     :true)
    gants.photo.attach(io: photo_3, filename: 'gants_cashemire_hmxwb2.jpg', content_type: 'image/jpg')
 
@@ -105,7 +117,7 @@ puts 'Finished user'
     url:         " ",
     user:        marie,
     list:        listenoel2019,
-    chosen_by:   paulette,
+    chosen_by:   john,
     status:     :true)
    casque.photo.attach(io: photo_4, filename: 'casque_audio_qpjfyp.jpg', content_type: 'image/jpg')
 
@@ -117,7 +129,7 @@ puts 'Finished user'
     url:         " ",
     user:        marie,
     list:       listenoel2019,
-    chosen_by:   paulette,
+    chosen_by:   john,
     status:     :true)
    jeu.photo.attach(io: photo_5, filename: 'jeu_video_gtcduy.jpg', content_type: 'image/jpg')
 

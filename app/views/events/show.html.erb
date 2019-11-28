@@ -1,0 +1,49 @@
+
+<div>
+  <div class="circle-div">
+    <div class="title-event" >
+      <h1><%= @event.name %></h1>
+    </div>
+    <ul class='circle-container'>
+      <% @lists.each do |list| %>
+        <li>
+          <div class='grow'>
+            <%= cl_image_tag list.user.photo.key, class: "avatar-bordered", data: { toggle: "modal", target: "#modal-list-#{list.id}" } %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+    <% @lists.each do |list| %>
+      <div class="modal fade" id="modal-list-<%= list.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle"><h1><%= list.title %></h1></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <% list.ideas.each do |idea| %>
+                <ul>
+                  <div class="idea-card">
+                    <div class="d-flex align-items-center justify-content-center">
+                      <%= cl_image_tag idea.photo.key, height: 150, width: 150, crop: :fill if idea.photo %>
+                    </div>
+                    <div class="idea-text">
+                      <h4><%= idea.title %></h4>
+                      <p><%= idea.description %></p>
+                    </div>
+                    <a href="/ideas/<%=idea.id%>"><div class="btn btn-primary">Choisir l'idée</div></a>
+                  </div>
+                </ul>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
