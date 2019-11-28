@@ -13,20 +13,30 @@
   }
 }
 .avatar-bordered {
-    width: 90px;
-    height: 90px;
+    width: 140px;
+    height: 143px;
+    border-radius: 48%;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    border:  4px  solid;
+    border-color: #8FC6C1;
+    object-fit: cover;
+}
+.avatar-bordered.avatar-bordered-me {
+    border-color: #FD9F87;
+}
+.avatar-small {
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    border: white 1px solid;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    border:  2px  solid;
+    border-color: white;
+    object-fit: cover;
 }
 
 
 .grow { transition: all .2s ease-in-out; }
-.grow:hover {
-  transform: scale(1.1);
-
-}
-
+.grow:hover { transform: scale(1.2); }
 
 @mixin on-circle($item-count, $circle-size, $item-size) {
   position: relative;
@@ -66,10 +76,28 @@
 }
 
 .circle-container {
-  @include on-circle($item-count: 6, $circle-size: 30em, $item-size: 6em);
+  @include on-circle($item-count: 6, $circle-size: 37em, $item-size: 10em);
   margin: 5em auto 0;
   border: solid 5px;
   border-color : #F2C164;
   }
 
 
+.modal-header {
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  background-color: #8FC6C1;
+}
+
+.modal-header.modal-header-me {
+  background-color: #FD9F87;
+}
+
+.btn-primary {
+
+  height: 40px;
+  border-radius: 4%;
+  width: 80px;
+  font-size: 10px;
+}

@@ -34,12 +34,14 @@ thomas = User.create!(
 thomas.photo.attach(io: photo_thomas, filename: '_JBU2368-1_Pierre_Nicoletti_v2_xobvkz.jpg', content_type: 'image/jpg')
 thomas.save
 
+
 photo_bernard = URI.open("https://res.cloudinary.com/alexiajjjj/image/upload/v1574937236/_JBU1933-1_Bernard_Le_Moullec_v2_fgbzz5.jpg" )
 bernard = User.create!(
   email: 'bernard@gmail.com',
   password: '123456789')
 bernard.photo.attach(io: photo_bernard, filename: '_JBU1933-1_Bernard_Le_Moullec_v2_fgbzz5.jpg', content_type: 'image/jpg')
 bernard.save
+
 
 photo_muriel = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574937236/_JBU1968-1_Muriel_Oger_v2_vnm1fx.jpg")
 muriel = User.create!(
@@ -74,6 +76,11 @@ puts 'Finished user'
   listenoel2019 = List.create!(
     title:        'Ma liste pour Noël 2019',
     user:          User.first,
+    event:         Event.first)
+
+  listeAlexia = List.create!(
+    title:        'Ma liste pour Noël 2019',
+    user:          alexia,
     event:         Event.first)
 
   listedepapi = List.create!(
