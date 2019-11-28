@@ -1,10 +1,19 @@
 #pages_home .navbar {
   background-color: #F2DCC5;
+  color: #1B2644;
+
+  .nav-link {
+    color: $bleu-nuit !important;
+  }
 }
 .navbar {
   height: 96px;
   background-color: #1B2644;
-  color: #FFFFFF;
+  color: white ;
+
+  .nav-link {
+    color: white !important;
+  }
 }
 
 .navbar-lewagon {
@@ -20,8 +29,7 @@
   width: 40px;
 }
 
-.navbar-nav .nav-item .nav-link, .navbar-nav .nav-item.active .nav-link, .nav-item .nav-link {
-  color: white;
-}
-
+// .navbar-nav .nav-item .nav-link, .navbar-nav .nav-item.active .nav-link, .nav-item .nav-link {
+//   color: white;
+// }
 
