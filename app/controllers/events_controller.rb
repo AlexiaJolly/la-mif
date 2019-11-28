@@ -10,6 +10,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @lists = @event.lists
     @ideas = Idea.all
+    @user = current_user
   end
 
   def new
