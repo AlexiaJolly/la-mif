@@ -45,7 +45,7 @@ line-height: 31px;
 color: #1E2B4B;
 }
 
-.btn-abricot
+.btn-primary.btn-abricot
 {
 background: #FD9F87;
 border-radius: 5px;
@@ -54,9 +54,14 @@ font-family: Ubuntu;
 padding-bottom: 10px;
 padding-top: 10px;
 margin-top: 10px;
+width: 200px;
+height: 50px;
+text-align:center;
+font-size: 15px;
+
 }
 
-.btn-bleu
+.btn-primary.btn-bleu
 {
 background: #3182FA;
 border-radius: 5px;
@@ -64,6 +69,11 @@ border-style: none;
 font-family: Ubuntu;
 padding-bottom: 10px;
 padding-top: 10px;
+width: 200px;
+height: 50px;
+text-align:center;
+font-size: 15px;
+margin-bottom: 160px;
 
 }
 
