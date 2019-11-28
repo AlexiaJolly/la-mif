@@ -1,14 +1,15 @@
-
+#pages_home .navbar {
+  background-color: #F2DCC5;
+}
 .navbar {
   height: 96px;
-  background-color: #1B2644 !important;
+  background-color: #1B2644;
+  color: #FFFFFF;
 }
 
 .navbar-lewagon {
   height: 96px;
   justify-content: space-between;
-  background: #1B2644;
-  color: #FFFFFF;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -22,3 +23,5 @@
 .navbar-nav .nav-item .nav-link, .navbar-nav .nav-item.active .nav-link, .nav-item .nav-link {
   color: white;
 }
+
+
