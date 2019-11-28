@@ -80,11 +80,6 @@ puts 'Finished user'
     user:          User.first,
     event:         Event.first)
 
-  listeAlexia = List.create!(
-    title:        'Ma liste pour Noël 2019',
-    user:          alexia,
-    event:         Event.first)
-
   listedepapi = List.create!(
     title:        'Liste de thomas',
     user:          User.third,
@@ -139,8 +134,8 @@ puts 'Finished user'
 
    photo_3 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574786659/La-mif/gants_cashemire_hmxwb2.jpg")
    gants = Idea.create!(
-    title:       "Gants en cashemire",
-    description: "Gants en cashemire couleur bleue",
+    title:       "gants en cashemire",
+    description: "gants en cashemire couleur bleue",
     url:         " ",
     user:        marie,
     list:        listenoel2019,
@@ -150,8 +145,8 @@ puts 'Finished user'
 
    photo_4 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574786555/La-mif/casque_audio_qpjfyp.jpg")
    casque = Idea.create!(
-    title:       "Casque de musique",
-    description: "Casque de musique blutooth",
+    title:       "casque de musique",
+    description: "casque de musique blutooth",
     url:         " ",
     user:        marie,
     list:        listenoel2019,
@@ -186,7 +181,7 @@ puts 'Finished user'
   photo_7 = URI.open("https://res.cloudinary.com/alexiajjjj/image/upload/v1574947576/320_lpnmql.jpg")
   escape = Idea.create!(
     title:       "Escape Game",
-    description: "Livre sure le Jeux de Escape",
+    description: "Livre",
     url:         " ",
     list:       listeanniversaire2019,
     user:        thomas,
@@ -197,8 +192,8 @@ puts 'Finished user'
   # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
   photo_8 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574938512/15204880_P1_ma2tar.jpg")
   orloge = Idea.create!(
-    title:       "Orloge de Meditation",
-    description: "Orloge en bois qui facilite la meditation",
+    title:       "Horloge de Meditation",
+    description: "Horloge en bois qui facilite la meditation",
     url:         " ",
     list:       listeanniversaire2019,
     user:        thomas,
@@ -220,8 +215,8 @@ puts 'Finished user'
 
   photo_10 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574938512/330_kudo5e.jpg")
   chosette = Idea.create!(
-    title:       "Chosette Bleu",
-    description: "Chosette bleu en laine",
+    title:       "Chausettes Bleu",
+    description: "Chausettes bleu en laine",
     url:         " ",
     user:        bernard,
     list:        listedejane,
