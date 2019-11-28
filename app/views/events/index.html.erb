@@ -2,13 +2,13 @@
   <div class="row">
     <div class="col-12">
 
-      <div class="d-flex flex-wrap justify-content-between">
+      <div class="d-flex flex-wrap justify-content-between m-2">
         <div>
         <h2>MES EVENEMENTS</h2>
         <p>Tous mes évènements et mes listes en un clic !</p>
         </div>
       <!-- BUTTON MODAL -->
-        <button type="button" class="btn btn-primary m-3 new-event" data-toggle="modal" data-target="#exampleModalCenter">Créer un évenement</button>
+        <button type="button" class="btn btn-primary btn-lg m-3 new-event" data-toggle="modal" data-target="#exampleModalCenter">Créer un évenement</button>
       </div>
 
 
@@ -42,7 +42,7 @@
                   <% end %>
                 </div>
                 <div>
-                  <%= link_to "Ajouter une idée", list_ideas_path(list), class: "btn btn-primary m-2 new-idea-cta" %>
+                  <%= link_to "Ajouter une idée", event_path(event), class: "btn btn-primary m-2 new-idea-cta" %>
                 </div>
               </div>
             </div>
