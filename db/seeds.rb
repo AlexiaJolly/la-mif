@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts 'Cleaning database...'
+Idea.destroy_all
 User.destroy_all
 Event.destroy_all
 List.destroy_all
-Idea.destroy_all
 
 puts 'Creating user...'
 photo_john = URI.open("https://res.cloudinary.com/alexiajjjj/image/upload/v1574872880/_JBU3064-1_John_Schults_v2_rsouhb.jpg" )

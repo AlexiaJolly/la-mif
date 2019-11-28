@@ -14,14 +14,20 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @event.lists.build
   end
 
   def create
     @event = Event.new(events_params)
+    @event.user = current_user
+    @event.lists.last.user = current_user
     @event.save
+    redirect_to event_path(@event)
   end
 
   def events_params
-    params.require(:event).permit(:name, :date, :token)
+    params.require(:event).permit(:name, :date, lists_attributes: [:title])
   end
 end
+
+
