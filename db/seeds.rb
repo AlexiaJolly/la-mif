@@ -80,7 +80,7 @@ puts 'Finished user'
 
   listeAlexia = List.create!(
     title:        'Ma liste pour Noël 2019',
-    user:          alexia,
+    user:          User.second,
     event:         Event.first)
 
   listedepapi = List.create!(
@@ -320,6 +320,17 @@ puts 'Finished user'
     chosen_by:   marie,
     status:     :true)
   hibou.photo.attach(io: photo_18, filename: '325_lnx957.jpg', content_type: 'image/jpg')
+
+  photo_19 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574786659/La-mif/gants_cashemire_hmxwb2.jpg")
+  gants = Idea.create!(
+    title:       "Gants en cashemire",
+    description: "Gants en cashemire couleur bleue",
+    url:         " ",
+    user:        marie,
+    list:        listeAlexia,
+    chosen_by:   john,
+    status:     :true)
+  gants.photo.attach(io: photo_19, filename: 'gants_cashemire_hmxwb2.jpg', content_type: 'image/jpg')
 
 puts 'Finished lists...'
 

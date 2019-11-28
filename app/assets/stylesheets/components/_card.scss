@@ -1,3 +1,13 @@
+
+a {
+  text-decoration: none;
+  color: black;
+  a:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
+
 .idea-card {
 
   display: flex;
@@ -6,7 +16,8 @@
   border: 0.5px solid #e2dfdf;
   width: 450px;
   height: 100px;
-  padding: 6px;
+  padding: 12px;
+
   img {
     width: 50px;
     height: 50px;
@@ -17,4 +28,10 @@
     font-size: 15px;
     font-weight: Light;
   }
+}
+
+.card-container {
+  background-color: white;
+  border: 1px solid lightgray;
+  width: 450px;
 }

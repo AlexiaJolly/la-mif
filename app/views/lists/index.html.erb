@@ -1,7 +1,56 @@
-<div class="container">
-  <li>
-    <%= @lists %>
-  </li>
-    <%= link_to "Create a list", new_list_path, class: "btn btn-primary" %>
+
+  <div class="lists d-flex p-5">
+    <% @lists.each do |list| %>
+      <a href="/events/<%=list.event_id%>">
+
+    <div class="container">
+    <% if list.user_id == current_user.id %>
+
+          <div class="card-container">
+            <div class="modal-header modal-header-me">
+              <%= cl_image_tag list.user.photo.key, class: "avatar-small"%>
+              <h3 class="modal-title m-2"><%= list.title %></h3>
+            </div>
+
+
+            <div class="modal-body">
+
+              <% list.ideas.each do |idea| %>
+
+                <li class="d-flex m-4">
+
+                  <div class="idea-card">
+                    <div class="d-flex align-items-center justify-content-center">
+                      <%= cl_image_tag idea.photo.key, height: 150, width: 150, crop: :fill if idea.photo %>
+                    </div>
+                    <div class="idea-title">
+                      <h5> <strong> <%= idea.title %> </strong><h5/>
+                        <p><%= idea.description %></p>
+                    </div>
+                    <a href="/ideas/<%=idea.id%>"><div class="btn btn-primary btn-primary-me"> Modifier</div></a>
+                  </div>
+
+                </li>
+
+              <% end %>
+
+            </div>
+          </div>
+
+    <% end %>
+
+    </div>
+
+      </a>
+
+    <% end %>
+  </div>
+
+<div class="container p-4">
+  <a href="/events/new"><div class="btn btn-primary">Créer un évenement</div></a>
 </div>
+
+
+
+
 
