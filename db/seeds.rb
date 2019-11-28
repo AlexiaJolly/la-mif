@@ -34,6 +34,13 @@ thomas = User.create!(
 thomas.photo.attach(io: photo_thomas, filename: '_JBU2368-1_Pierre_Nicoletti_v2_xobvkz.jpg', content_type: 'image/jpg')
 thomas.save
 
+photo_alexia = URI.open( "https://res.cloudinary.com/alexiajjjj/image/upload/v1574948263/foj008t4hqsw0p1x2sqzta6jmbm1.jpg")
+alexia = User.create!(
+  email: 'alexia@gmail.com',
+  password: '123456')
+alexia.photo.attach(io: photo_alexia, filename: 'alexia.jpg', content_type: 'image/jpg')
+alexia.save
+
 
 # photo_florence = URI.open (" ")
 florence = User.create!(
@@ -68,6 +75,11 @@ puts 'Finished user'
     user:          User.first,
     event:         Event.first)
 
+  listeAlexia = List.create!(
+    title:        'Ma liste pour Noël 2019',
+    user:          alexia,
+    event:         Event.first)
+
   listedepapi = List.create!(
     title:        'Liste de thomas',
     user:          User.third,
@@ -86,6 +98,18 @@ puts 'Finished user'
     status:      true)
 
   echarpe.photo.attach(io: photo_1, filename: 'echarpe_grise.jpg', content_type: 'image/jpg')
+
+  photo_111 = URI.open("https://res.cloudinary.com/alexiajjjj/image/upload/v1574787785/La-mif/echarpe_grise_kbdiqu.jpg")
+  echarpe = Idea.create!(
+    title:       "echarpe grise",
+    description: "grande echarpe en laine gris clair",
+    url:         " ",
+    list:       listeAlexia,
+    user:        alexia,
+    chosen_by:   john,
+    status:      true)
+
+  echarpe.photo.attach(io: photo_111, filename: 'echarpe_grise.jpg', content_type: 'image/jpg')
 # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
    photo_2 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574786878/La-mif/velo_ville_tphbip.jpg")
    velo = Idea.create!(
