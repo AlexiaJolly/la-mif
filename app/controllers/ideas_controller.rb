@@ -1,5 +1,4 @@
 class IdeasController < ApplicationController
-
   def index
     @ideas = Idea.all
   end
@@ -29,5 +28,4 @@ class IdeasController < ApplicationController
   def ideas_params
     params.require(:idea).permit(:title, :description, :url, :photo)
   end
-
 end
