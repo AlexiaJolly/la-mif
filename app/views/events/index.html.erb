@@ -2,46 +2,53 @@
   <div class="row">
     <div class="col-12">
 
-    <h2>MES EVENEMENTS</h2>
-    <p>Tous mes évènements et mes listes en un clic !</p>
+      <div class="d-flex flex-wrap justify-content-between">
+        <div>
+        <h2>MES EVENEMENTS</h2>
+        <p>Tous mes évènements et mes listes en un clic !</p>
+        </div>
+      <!-- BUTTON MODAL -->
+        <button type="button" class="btn btn-primary m-3 new-event" data-toggle="modal" data-target="#exampleModalCenter">Créer un évenement</button>
+      </div>
 
-    <div class="d-flex flex-wrap w-100">
+
       <% @events.each do |event| %>
-        <% event.lists.each do |list| %>
-          <div class="idea-card m-2">
-            <div class="idea-card-title">
-              <h4><%= event.name %></h4>
-            </div>
-            <div class="idea-card-body bg-white d-flex flex-column h-100 justify-content-between">
-              <div class="idea-wrappers">
-                <% list.ideas.each do |idea| %>
-                  <div class="idea-wrapper m-2">
-                    <div class="idea-wrapper-icon">
-                      <%= cl_image_tag idea.photo.key, width: 75, crop: :fit %>
-                    </div>
-                    <div class="idea-wrapper-text">
-                      <div>
-                        <strong><%= idea.title %></strong>
+        <h3><%= event.name %></h3>
+        <div class="lists-container">
+          <% event.lists.each do |list| %>
+            <div class="list-idea-card">
+              <div class="idea-card-title">
+                <h4><%= list.title %></h4>
+              </div>
+              <div class="idea-card-body">
+                <div class="idea-wrappers">
+                  <% list.ideas.each do |idea| %>
+                    <div class="idea-wrapper">
+                      <div class="idea-wrapper-icon">
+                        <%= cl_image_tag idea.photo.key, width: 75, crop: :fit %>
                       </div>
-                      <%= idea.description %>
+                      <div class="idea-wrapper-text">
+                        <div>
+                          <strong><%= idea.title %></strong>
+                        </div>
+                        <%= idea.description %>
 
+                      </div>
+                      <div class="idea-wrapper-cta">
+                        <%= link_to "modifier", idea.url, class: "btn btn-primary"%>
+                      </div>
                     </div>
-                    <div class="idea-wrapper-cta">
-                      <%= link_to "modifier", idea.url, class: "btn btn-primary"%>
-                    </div>
-                  </div>
 
-                <% end %>
-              </div>
-              <div>
-                <%= link_to "Ajouter une idée", list_ideas_path(list), class: "btn btn-primary m-2 new-idea-cta" %>
+                  <% end %>
+                </div>
+                <div>
+                  <%= link_to "Ajouter une idée", list_ideas_path(list), class: "btn btn-primary m-2 new-idea-cta" %>
+                </div>
               </div>
             </div>
-          </div>
-
-        <% end %>
+          <% end %>
+        </div>
       <% end %>
-    </div>
 
     </div>
   </div>
@@ -49,8 +56,7 @@
 
 
 
-<!-- BUTTON MODAL -->
-  <button type="button" class="btn btn-primary m-3 new-event" data-toggle="modal" data-target="#exampleModalCenter">Créer un évenement</button>
+
 <!-- MODAL BOOTSTRAP -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
