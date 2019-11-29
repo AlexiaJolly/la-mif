@@ -4,48 +4,63 @@
 
       <div class="d-flex flex-wrap justify-content-between m-2">
         <div>
-        <h2>MES EVENEMENTS</h2>
-        <p>Tous mes évènements et mes listes en un clic !</p>
+          <div class= "titre" >
+            <%= "MES LISTES" %>
+          </div>
+          <div class= "titre_Sous" >
+            <%= "Toutes mes listes en un clic" %>
+          </div>
+
         </div>
+
       <!-- BUTTON MODAL -->
         <button type="button" class="btn btn-primary btn-lg m-3 new-event" data-toggle="modal" data-target="#exampleModalCenter">Créer un évenement</button>
       </div>
 
 
       <% @events.each do |event| %>
-        <h3><%= event.name %></h3>
+        <div class = "titre_event">
+          <%= event.name %>
+          <%= link_to "View", event_path(event) %>
+
+        </div>
+
+
         <div class="lists-container">
           <% event.lists.each do |list| %>
-            <div class="list-idea-card">
-              <div class="idea-card-title">
-                <h4><%= list.title %></h4>
-              </div>
-              <div class="idea-card-body">
-                <div class="idea-wrappers">
-                  <% list.ideas.each do |idea| %>
-                    <div class="idea-wrapper">
-                      <div class="idea-wrapper-icon">
-                        <%= cl_image_tag idea.photo.key, width: 75, crop: :fit %>
-                      </div>
-                      <div class="idea-wrapper-text">
-                        <div>
-                          <strong><%= idea.title %></strong>
+            <% if list.user_id == current_user.id %>
+
+              <div class="list-idea-card">
+                <div class="idea-card-title">
+                  <h4><%= list.title %></h4>
+                </div>
+                <div class="idea-card-body">
+                  <div class="idea-wrappers">
+                    <% list.ideas.each do |idea| %>
+                      <div class="idea-wrapper">
+                        <div class="idea-wrapper-icon">
+                          <%= cl_image_tag idea.photo.key, width: 75, crop: :fit %>
                         </div>
-                        <%= idea.description %>
+                        <div class="idea-wrapper-text">
+                          <div>
+                            <strong><%= idea.title %></strong>
+                          </div>
+                          <%= idea.description %>
 
+                        </div>
+                        <div class="idea-wrapper-cta">
+                          <%= link_to "modifier", idea.url, class: "btn btn-primary"%>
+                        </div>
                       </div>
-                      <div class="idea-wrapper-cta">
-                        <%= link_to "modifier", idea.url, class: "btn btn-primary"%>
-                      </div>
-                    </div>
 
-                  <% end %>
-                </div>
-                <div>
-                  <%= link_to "Ajouter une idée", event_path(event), class: "btn btn-primary m-2 new-idea-cta" %>
+                    <% end %>
+                  </div>
+                      <div>
+                    <%= link_to "Ajouter une idée", event_path(event), class: "btn btn-primary m-2 new-idea-cta" %>
+                  </div>
                 </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
         </div>
       <% end %>

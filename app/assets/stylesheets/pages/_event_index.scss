@@ -7,10 +7,12 @@
   flex-wrap: wrap;
 }
 .list-idea-card {
-  width: 456px;
+  width: 350px;
   background: white;
   margin-right: 20px;
   margin-bottom: 20px;
+  margin-left: 50px;
+  margin-top: 15px;
   border-radius: 5px;
   &:last-child {
     margin-right: 0;
@@ -24,6 +26,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
 }
 
 .idea-wrapper {
@@ -47,5 +50,29 @@
 .idea-wrappers {
   overflow-y:scroll;
   height: 368px;
+}
+
+.titre {
+  margin-top: 20px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #1B2644;
+  margin-left: 40px;
+}
+
+.titre_Sous {
+  margin-top: 2px;
+  font-size: 20px;
+  color: #1B2644;
+  font-weight: bold;
+  margin-left: 40px;
+
+}
+
+.titre_event {
+  margin-left: 50px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 20px;
 }
 
