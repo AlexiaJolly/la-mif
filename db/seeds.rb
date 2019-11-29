@@ -48,7 +48,7 @@ bernard.save
 photo_muriel = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574937236/_JBU1968-1_Muriel_Oger_v2_vnm1fx.jpg")
 muriel = User.create!(
   email: 'muriel@gmail.com',
-  password: 'cagoule')
+  password: 'vanille')
 muriel.photo.attach(io: photo_muriel, filename: '_JBU1968-1_Muriel_Oger_v2_vnm1fx.jpg', content_type: 'image/jpg')
 muriel.save
 
@@ -71,43 +71,39 @@ puts 'Finished user'
     date:           Date.today,
     user:          User.first)
 
+
   puts 'Finished events'
 
   puts 'Creating lists...'
 
-  listenoel2019 = List.create!(
+  listejohn = List.create!(
     title:        'Ma liste pour Noël 2019',
-    user:          User.first,
+    user:          john,
     event:         Event.first)
 
-  listeAlexia = List.create!(
+  listemarie = List.create!(
     title:        'Ma liste pour Noël 2019',
-    user:          User.second,
+    user:          marie,
     event:         Event.first)
 
-  listedepapi = List.create!(
+  listedethomas = List.create!(
     title:        'Liste de thomas',
-    user:          User.third,
+    user:          thomas,
     event:         Event.first)
 
-  listeanniversaire2019 = List.create!(
-    title:        'Ma liste pour mon Anniversaire',
-    user:          User.second,
+  listedeBernard = List.create!(
+    title:        'Ma liste de Noël',
+    user:          bernard,
     event:         Event.first)
 
-  listedejane = List.create!(
-    title:        'Liste de Jane',
-    user:          User.fourth,
-    event:         Event.first)
-
-  listefetesnoel = List.create!(
+  listemuriel = List.create!(
     title:        'Ma liste pour les fetes de Noël',
-    user:          User.fifth,
+    user:          muriel,
     event:         Event.first)
 
-  listedetante = List.create!(
-    title:        'Liste pour ma Tante',
-    user:          User.last,
+  listedepaul = List.create!(
+    title:        'Xmas 2019',
+    user:          paul,
     event:         Event.first)
 
 
@@ -118,8 +114,8 @@ puts 'Finished user'
     title:       "echarpe grise",
     description: "grande echarpe en laine gris clair",
     url:         " ",
-    list:       listenoel2019,
-    user:        marie,
+    list:        listemuriel,
+    user:        muriel,
     chosen_by:   john,
     status:      true)
   echarpe.photo.attach(io: photo_1, filename: 'echarpe_grise.jpg', content_type: 'image/jpg')
@@ -130,8 +126,8 @@ puts 'Finished user'
     title:       "velo de ville",
     description: "velo de ville cadre taille 54",
     url:         " ",
-    list:       listenoel2019,
-    user:        marie,
+    list:       listedethomas,
+    user:        thomas,
     chosen_by:   thomas,
     status:     :true)
    velo.photo.attach(io: photo_2, filename: 'velo_ville_tphbip.jpg', content_type: 'image/jpg')
@@ -143,7 +139,7 @@ puts 'Finished user'
     description: "gants en cashemire couleur bleue",
     url:         " ",
     user:        marie,
-    list:        listenoel2019,
+    list:        listemarie,
     chosen_by:   john,
     status:     :true)
    gants.photo.attach(io: photo_3, filename: 'gants_cashemire_hmxwb2.jpg', content_type: 'image/jpg')
@@ -153,8 +149,8 @@ puts 'Finished user'
     title:       "casque de musique",
     description: "casque de musique blutooth",
     url:         " ",
-    user:        marie,
-    list:        listenoel2019,
+    user:        john,
+    list:        listejohn,
     chosen_by:   john,
     status:     :true)
    casque.photo.attach(io: photo_4, filename: 'casque_audio_qpjfyp.jpg', content_type: 'image/jpg')
@@ -165,8 +161,8 @@ puts 'Finished user'
     title:       "Jeu video",
     description: "Jeu video pour la PS4: Blacksad ou Citadel",
     url:         " ",
-    user:        marie,
-    list:       listenoel2019,
+    user:        bernard,
+    list:        listedeBernard,
     chosen_by:   john,
     status:     :true)
    jeu.photo.attach(io: photo_5, filename: 'jeu_video_gtcduy.jpg', content_type: 'image/jpg')
@@ -178,7 +174,7 @@ puts 'Finished user'
     description: "Prix renaudot 2019",
     url:         " ",
     user:        marie,
-    list:        listedepapi,
+    list:        listemarie,
     chosen_by:   thomas,
     status:     :true)
    renaudot.photo.attach(io: photo_6, filename: 'livre_renaudot_dwutqp.jpg', content_type: 'image/jpg')
@@ -188,8 +184,8 @@ puts 'Finished user'
     title:       "Escape Game",
     description: "Livre",
     url:         " ",
-    list:       listeanniversaire2019,
-    user:        thomas,
+    list:       listedeBernard,
+    user:        bernard,
     chosen_by:   muriel,
     status:      :true)
   escape.photo.attach(io: photo_7, filename: '320_lpnmql.jpg', content_type: 'image/jpg')
@@ -198,10 +194,10 @@ puts 'Finished user'
   photo_8 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574938512/15204880_P1_ma2tar.jpg")
   orloge = Idea.create!(
     title:       "Horloge de Meditation",
-    description: "Horloge en bois qui facilite la meditation",
+    description: "Horloge qui facilite la meditation",
     url:         " ",
-    list:       listeanniversaire2019,
-    user:        thomas,
+    list:        listemuriel,
+    user:        muriel,
     chosen_by:   bernard,
     status:     :true)
   orloge.photo.attach(io: photo_8, filename: '15204880_P1_ma2tar.jpg', content_type: 'image/jpg')
@@ -213,18 +209,18 @@ puts 'Finished user'
     description: "Crayons de toutes les couleurs en cire",
     url:         " ",
     user:        thomas,
-    list:        listeanniversaire2019,
+    list:        listedethomas,
     chosen_by:   paul,
     status:     :true)
   crayons.photo.attach(io: photo_9, filename: '329_zymisw.jpg', content_type: 'image/jpg')
 
   photo_10 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574938512/330_kudo5e.jpg")
   chosette = Idea.create!(
-    title:       "Chausettes Bleu",
+    title:       "Chausettes",
     description: "Chausettes bleu en laine",
     url:         " ",
     user:        bernard,
-    list:        listedejane,
+    list:        listedeBernard,
     chosen_by:   muriel,
     status:     :true)
   chosette.photo.attach(io: photo_10, filename: '330_kudo5e.jpg', content_type: 'image/jpg')
@@ -232,34 +228,34 @@ puts 'Finished user'
 
   photo_11 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574938512/328_kkfea8.jpg")
   boite = Idea.create!(
-    title:       "Boite de Couteau",
-    description: "Boite de maquette de couteau",
+    title:       "Boite de couteaux",
+    description: "Boite de couteaux à steak",
     url:         " ",
-    user:        bernard,
-    list:       listedejane,
+    user:       bernard,
+    list:       listedeBernard,
     chosen_by:   thomas,
     status:     :true)
   boite.photo.attach(io: photo_11, filename: '328_kkfea8.jpg', content_type: 'image/jpg')
 
 
-  photo_12 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574938512/327_nqme3s.jpg")
+  photo_12 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1575037550/set_jardinage_kkxv8r.jpg")
   cie = Idea.create!(
-    title:       "Cie en bois",
-    description: "Cie en bois pour les enfants",
+    title:       "Kit jardinage",
+    description: "pour avoir la main verte",
     url:         " ",
-    user:        bernard,
-    list:        listedejane,
+    user:        paul,
+    list:        listedepaul,
     chosen_by:   marie,
     status:     :true)
-  cie.photo.attach(io: photo_12, filename: '327_nqme3s.jpg', content_type: 'image/jpg')
+  cie.photo.attach(io: photo_12, filename: 'set_jardinage_kkxv8r.jpg', content_type: 'image/jpg')
 
   photo_13 = URI.open("https://res.cloudinary.com/alexiajjjj/image/upload/v1574947560/320-2_zk7swd.jpg")
   telescope = Idea.create!(
     title:       "Telescope",
-    description: "Mini Telescope pour voire les étoiles",
+    description: "Mini Telescope pour voir les étoiles",
     url:         " ",
-    list:       listefetesnoel,
-    user:        muriel,
+    list:        listedepaul,
+    user:        paul,
     chosen_by:   john,
     status:      :true)
   telescope.photo.attach(io: photo_13, filename: '320-2_zk7swd.jpg', content_type: 'image/jpg')
@@ -268,10 +264,10 @@ puts 'Finished user'
   photo_14 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574938512/324_d4yrhe.jpg")
   lego = Idea.create!(
     title:       "Lego Robots",
-    description: "Petit kits de lego pour creer des robots",
+    description: "Petit kit pour créer des robots",
     url:         " ",
-    list:       listefetesnoel,
-    user:        muriel,
+    list:        listedethomas,
+    user:        thomas,
     chosen_by:   bernard,
     status:     :true)
   lego.photo.attach(io: photo_14, filename: '324_d4yrhe.jpg', content_type: 'image/jpg')
@@ -280,57 +276,57 @@ puts 'Finished user'
   photo_15 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574938512/321_r1ydn9.jpg")
   monde = Idea.create!(
     title:       "Le Monde",
-    description: "Boite de jouer le monde",
+    description: "Jouets le monde",
     url:         " ",
-    user:        muriel,
-    list:        listefetesnoel,
+    user:        john,
+    list:        listejohn,
     chosen_by:   marie,
     status:     :true)
   monde.photo.attach(io: photo_15, filename: '321_r1ydn9.jpg', content_type: 'image/jpg')
 
-  photo_16 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574938512/323_yistub.jpg")
+  photo_16 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1575037439/jardiniere_qvihmt.jpg")
   livres = Idea.create!(
-    title:       "Livres D'Enigmes",
-    description: "Le grand livres d'enigmes",
+    title:       "Jardiniere d'intérieur",
+    description: "pour le salon",
     url:         " ",
     user:        paul,
-    list:        listedetante,
+    list:        listedepaul,
     chosen_by:   john,
     status:     :true)
-  livres.photo.attach(io: photo_16, filename: '323_yistub.jpg', content_type: 'image/jpg')
+  livres.photo.attach(io: photo_16, filename: 'jardiniere_qvihmt.jpg', content_type: 'image/jpg')
 
 
   photo_17 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574948173/319_obyrja.jpg")
   nuit = Idea.create!(
-    title:       "Orloge",
-    description: "Orloge de Nuit",
+    title:       "Horloge",
+    description: "Horloge fluorescente",
     url:         " ",
-    user:        paul,
-    list:       listedetante,
+    user:        marie,
+    list:       listemarie,
     chosen_by:   thomas,
     status:     :true)
   nuit.photo.attach(io: photo_17, filename: '319_obyrja.jpg', content_type: 'image/jpg')
 
 
-  photo_18 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574938512/325_lnx957.jpg")
+  photo_18 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1575037303/pret_a_pousser_ax46w7.jpg")
   hibou = Idea.create!(
-    title:       "Boites Hibou",
-    description: "Kits de Maquillage Hibou",
+    title:       "Potager d'intérieur",
+    description: "menthe, basilic, origan",
     url:         " ",
     user:        paul,
-    list:        listedetante,
-    chosen_by:   marie,
+    list:        listedepaul,
+    chosen_by:   paul,
     status:     :true)
-  hibou.photo.attach(io: photo_18, filename: '325_lnx957.jpg', content_type: 'image/jpg')
+  hibou.photo.attach(io: photo_18, filename: 'pret_a_pousser_ax46w7.jpg', content_type: 'image/jpg')
 
-  photo_19 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574786659/La-mif/gants_cashemire_hmxwb2.jpg")
+  photo_19 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1575038134/raquette_whz6se.jpg")
   gants = Idea.create!(
-    title:       "Gants en cashemire",
-    description: "Gants en cashemire couleur bleue",
+    title:       "Raquette de tenis",
+    description: "pour jouer comme Federer",
     url:         " ",
-    user:        marie,
-    list:        listeAlexia,
-    chosen_by:   john,
+    user:        thomas,
+    list:        listedethomas,
+    chosen_by:   thomas,
     status:     :true)
   gants.photo.attach(io: photo_19, filename: 'gants_cashemire_hmxwb2.jpg', content_type: 'image/jpg')
 

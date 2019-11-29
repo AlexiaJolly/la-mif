@@ -10,28 +10,45 @@ a {
 
 .idea-card {
 
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border: 0.5px solid #e2dfdf;
-  width: 450px;
+  // display: flex;
+  // justify-content: space-around;
+  // align-items: center;
+  border-radius: 10px;
   height: 100px;
   padding: 12px;
 
   img {
     width: 50px;
     height: 50px;
+    // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    object-fit: contain;
   }
 
-  p {
-    font-family: Ubuntu;
-    font-size: 15px;
-    font-weight: Light;
-  }
+
 }
 
 .card-container {
   background-color: white;
   border: 1px solid lightgray;
+  radius: 5%;
   width: 450px;
+}
+
+
+.idea-title {
+  color: #1B2644;
+
+  h5{
+    font-family: Ubuntu;
+    text-transform: uppercase;;
+    font-size: 18px;
+
+
+  }
+   p {
+    font-family: Ubuntu;
+    font-size: 15px;
+    text-transform: lowercase;
+  }
+
 }
