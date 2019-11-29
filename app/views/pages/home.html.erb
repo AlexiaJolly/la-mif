@@ -13,17 +13,49 @@
             Inscrivez les membres de votre famille sur la Mif et partagez ensemble vos idées de cadeaux !
           </p>
         </div>
-        <div class="button-container">
-          <a href="/lists/">
-            <div class="button-coral">
-              <p>Mes listes</p>
-            </div>
-          </a>
-
+          <div class="button-container">
+            <button type="button" class="button-coral" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Créer un évènement</button>
+          </div>
         </div>
-      </div>
       <div class="image-container col-md-6 col-12">
-        <img src="/assets/xmas_home.jpg" alt="christmas">
+        <%= image_tag ("xmas_home.jpg") %>
       </div>
   </div>
 </div>
+
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">NOUVEL EVENEMENT</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="topo">
+          <p>Je crée ma nouvelle fiesta ici !</p>
+        </div>
+
+        <%= simple_form_for @event do |f| %>
+          <%= f.input :name, placeholder: 'Nom de mon évènement :', label: false, input_html: { class: 'form-spe' } %>
+          <%= f.input :date, as: :string, required: false, label: false, input_html: {class: "datepicker"} %>
+          <%= f.simple_fields_for :lists do |l| %>
+            <%= l.input :title, placeholder: 'Nom de ma liste :', label: false, input_html: { class: 'form-spe' }  %>
+          <% end %>
+          <%= f.submit "Créer mon évènement", class: "btn btn-primary btn-bleu" %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
