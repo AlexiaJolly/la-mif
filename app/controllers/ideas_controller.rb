@@ -19,7 +19,7 @@ class IdeasController < ApplicationController
     @idea.list = @list
 
     if @idea.save
-      redirect_to event_path(@list.event)
+      redirect_to events_path
     else
       render :new
     end
