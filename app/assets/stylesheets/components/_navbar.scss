@@ -29,6 +29,12 @@
   width: 40px;
 }
 
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // .navbar-nav .nav-item .nav-link, .navbar-nav .nav-item.active .nav-link, .nav-item .nav-link {
 //   color: white;
 // }

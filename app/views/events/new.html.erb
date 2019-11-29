@@ -2,24 +2,25 @@
 
   <!-- NEW EVENT -->
 
-  <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-bleu" data-toggle="modal" data-target="#staticBackdrop">
-  Créer un évènement
-</button>
+<!--   Button trigger modal -->
+<!--<button type="button" class="btn btn-primary btn-bleu" data-toggle="modal" data-target="#staticBackdrop">-->
+<!--  Créer un évènement-->
+<!--</button>-->
 
 <!-- Modal -->
+
+  <div class="centered">
 <div class="pop-up-new-product">
   <h5 class="nouvelle-idee">NOUVEL EVENEMENT</h5>
-  <div class="topo">
     <p>Je crée ma nouvelle fiesta ici !</p>
-  </div>
 
   <%= simple_form_for @event do |f| %>
     <%= f.input :name, placeholder: 'Nom de mon évènement :', label: false, input_html: { class: 'form-spe' } %>
-    <%= f.input :date, placeholder: 'Date :', label: false, input_html: { class: 'form-spe' } %>
     <%= f.simple_fields_for :lists do |l| %>
       <%= l.input :title, placeholder: 'Nom de ma liste :', label: false, input_html: { class: 'form-spe' }  %>
     <% end %>
+    <%= f.input :date, placeholder: 'Date :', label: false, input_html: { class: 'form-spe' } %>
     <%= f.submit "Créer mon évènement", class: "btn btn-primary btn-bleu" %>
   <% end %>
 </div>
+  </div>
