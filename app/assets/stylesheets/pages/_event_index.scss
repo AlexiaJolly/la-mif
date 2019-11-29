@@ -7,6 +7,7 @@
   flex-wrap: wrap;
 }
 .list-idea-card {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   width: 350px;
   background: white;
   margin-right: 20px;
@@ -21,26 +22,43 @@
 
 .idea-card-title {
   background: #FD9F87;
-  height: 64px;
+  height: 80px;
   border-radius: 4px 4px 0px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: white;
+  padding: 10px 20px;
 }
 
 .idea-wrapper {
-  margin: 2px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  min-height: 100px;
 }
 .idea-wrapper-icon {
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
 }
 .idea-wrapper-text {
+  font-family: Ubuntu;
   flex-grow: 1;
-  padding: 5px;
+  color: #1B2644;
+  line-height: 20px;
+  padding-bottom: 30px;
 }
+
+.idea-wrapper-description {
+  font-family: Lora;
+  color: #1B2644;
+  line-height: 20px;
+}
+#events-title {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: #1B2644;
+}
+
 
 .new-event {
   height: 50px;
@@ -73,6 +91,21 @@
   margin-left: 50px;
   margin-top: 15px;
   margin-bottom: 15px;
-  font-size: 20px;
+
+}
+
+.view a {
+ color: #1B2644;
+}
+
+.view:hover a {
+ color: #FD9F87;
+}
+
+.grow-card img {
+  transition: all .2s ease-in-out;
+}
+.grow-card:hover img {
+  transform: scale(1.15);
 }
 
