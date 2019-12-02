@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     resources :ideas, only: [:new, :create]
   end
 
-  resources :ideas, only: [:update, :show]
+  resources :ideas, only: [:update, :show] do
+    resources :comments, only: [:create]
+  end
 end

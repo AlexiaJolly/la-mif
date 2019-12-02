@@ -19,9 +19,26 @@
 
       <div class="d-flex align-items-center idea-buttons">
 
+        <% if @list.user != current_user %>
+
+
+
+          <ul>
+           <% idea.comments.each do |comment|  %>
+           <li> <%  comment.description%> </li>
+           <%  end %>
+          </ul>
+
+
+
+          <%= simple_form_for([idea, Comment.new]) do |f| %>
+            <%= f.input :description, placeholder: 'Commentaires' %>
+            <%= f.submit %>
+          <% end %>
+        <% end %>
+
 
         <% if @list.user.id == current_user.id %>
-
           <%= link_to '#' do %>
             <%= image_tag 'picto_modifier.png', width: 40 %>
           <% end %>
