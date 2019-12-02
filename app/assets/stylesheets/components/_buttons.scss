@@ -71,3 +71,9 @@ a:hover {
   color: white;
   background-color: #E84A97;
 }
+
+.btn-selected:hover {
+  transition: all 0.5s ease;
+  background-color: #E84A79;
+  color: white;
+}
