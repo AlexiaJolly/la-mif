@@ -34,6 +34,7 @@ class IdeasController < ApplicationController
   def update
     @idea = Idea.find(params[:id])
     @is_me = @idea.list.user == current_user
+
     if @idea.chosen_by_id == current_user.id
       @idea.chosen_by_id = nil
       @idea.status = false
@@ -41,7 +42,8 @@ class IdeasController < ApplicationController
       @idea.chosen_by_id = current_user.id
       @idea.status = true
     end
-    @idea.save
+
+
     if @idea.save
       respond_to do |format|
         format.html { redirect_to event_path(@idea.list.event) }
