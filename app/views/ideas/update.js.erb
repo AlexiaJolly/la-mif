@@ -1,0 +1,9 @@
+// app/views/reviews/create.js.erb
+// Here you generate *JavaScript* that would be executed in the browser
+function replaceIdea(innerHTML) {
+    const newIdeaList = document.getElementById('modal-idea-<%=@idea.id%>');
+    newIdeaList.innerHTML = innerHTML;
+}
+
+
+replaceIdea('<%= j render "events/idea_modal", idea: @idea, is_me:@is_me %>')

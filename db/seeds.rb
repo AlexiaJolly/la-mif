@@ -117,7 +117,7 @@ puts 'Finished user'
     list:        listemuriel,
     user:        muriel,
     chosen_by:   john,
-    status:      true)
+    status:      :false)
   echarpe.photo.attach(io: photo_1, filename: 'echarpe_grise.jpg', content_type: 'image/jpg')
 
 # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
