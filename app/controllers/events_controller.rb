@@ -3,13 +3,17 @@ class EventsController < ApplicationController
     @user = current_user
     @events = Event.all
     @ideas = Idea.all
+
+    @event = Event.new
+    @event.lists.build
   end
 
   def show
+    @user = current_user
     @event = Event.find(params[:id])
+
     @lists = @event.lists
     @ideas = Idea.all
-    @user = current_user
   end
 
   def new

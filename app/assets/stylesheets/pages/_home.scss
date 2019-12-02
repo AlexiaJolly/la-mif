@@ -77,10 +77,12 @@ a {
 
 .button-container {
   display: flex;
+  padding: 10px;
 }
 
 .button-container p {
-  color: white;
+  color: #1B2644;
+  padding: 10px;
 }
 
 @media only screen and (max-width: 900px) {

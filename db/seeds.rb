@@ -72,6 +72,13 @@ puts 'Finished user'
     user:          User.first)
 
 
+
+  anniv2019 = Event.create!(
+    name:         'Anniv Bernard',
+    date:           Date.today,
+    user:          bernard)
+
+
   puts 'Finished events'
 
   puts 'Creating lists...'
@@ -80,6 +87,11 @@ puts 'Finished user'
     title:        'Ma liste pour Noël 2019',
     user:          john,
     event:         Event.first)
+
+   listeannivB = List.create!(
+    title:        'Ma liste pour Noël 2019',
+    user:          bernard,
+    event:         Event.second)
 
   listemarie = List.create!(
     title:        'Ma liste pour Noël 2019',
@@ -119,6 +131,19 @@ puts 'Finished user'
     chosen_by:   john,
     status:      true)
   echarpe.photo.attach(io: photo_1, filename: 'echarpe_grise.jpg', content_type: 'image/jpg')
+
+  photo_annex = URI.open("https://res.cloudinary.com/alexiajjjj/image/upload/v1575283067/La-mif/chevalet_bernard_risdx9.jpg")
+  autre = Idea.create!(
+    title:       "echarpe grise",
+    description: "grande echarpe en laine gris clair",
+    url:         " ",
+    list:        listeannivB,
+    user:        bernard,
+    chosen_by:   john,
+    status:      true)
+  autre.photo.attach(io: photo_annex, filename: 'chevalet_bernard_risdx9.jpg.jpg', content_type: 'image/jpg')
+
+
 
 # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
    photo_2 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574786878/La-mif/velo_ville_tphbip.jpg")
