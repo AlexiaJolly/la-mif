@@ -9,8 +9,10 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
   end
 
+
   def lists_params
     params.require(:list).permit(:title)
   end
+
 
 end

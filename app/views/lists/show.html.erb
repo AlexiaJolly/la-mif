@@ -1,5 +1,6 @@
 
 
+
 <ul class="list-card p-4">
   <h2 id="events-title">
     <%= @list.event.name.upcase %>
@@ -45,4 +46,10 @@
 
 </ul>
 
+
+
+<%= simple_form_for @list.event, url: invite_users_event_path(@list.event), method: :post  do |f| %>
+    <%= f.input :emails, placeholder: 'user@domain.com' %>
+    <%= f.submit %>
+<% end %>
 

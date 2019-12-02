@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  attr_accessor :emails
   belongs_to :user
   has_secure_token
   has_many :lists, dependent: :destroy
