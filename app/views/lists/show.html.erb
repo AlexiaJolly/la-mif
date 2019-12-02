@@ -1,0 +1,48 @@
+
+
+<ul class="list-card p-4">
+  <h2 id="events-title">
+    <%= @list.event.name.upcase %>
+  </h2>
+  <% @list.ideas.each do |idea| %>
+
+    <div class= "card-idea p-4 border-bottom">
+      <%= cl_image_tag idea.photo.key, class: 'idea-img' if idea.photo %>
+      <div class= "card-idea-bloc">
+        <div class = "idea-title">
+          <%= idea.title.upcase %>
+        </div>
+        <div class = "idea-description"><%= idea.description.upcase %></div>
+        <a href=" " class= "btn"><span>Voir plus</span></a>
+      </div>
+
+      <div class="d-flex align-items-center idea-buttons">
+
+
+        <% if @list.user.id == current_user.id %>
+
+          <%= link_to '#' do %>
+            <%= image_tag 'picto_modifier.png', width: 40 %>
+          <% end %>
+          <%= link_to '#', method: :delete do %>
+            <%= image_tag 'picto_corbeille.png', width: 20 %>
+            <%# unless is_me %>
+          <% end %>
+          <% else %>
+            <a href="/ideas/<%=idea.id%>" class='btn btn-primary'><div>Choisir</div></a>
+        <% end %>
+      </div>
+    </div>
+
+
+
+  <% end %>
+  <div class="btn-center grow-card" style="display: flex; align-items: center; justify-content: center;">
+    <%= link_to '#' do %>
+      <%= image_tag 'picto_add.png', width: 60%>
+    <% end %>
+  </div>
+
+</ul>
+
+

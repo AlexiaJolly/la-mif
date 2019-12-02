@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :lists, only: [:create]
   end
 
-  resources :lists, only: [:index, :new] do
+  resources :lists, only: [:index, :new, :show] do
     resources :ideas, only: [:new, :create]
   end
 
