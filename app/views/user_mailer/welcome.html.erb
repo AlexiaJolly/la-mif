@@ -1,4 +1,5 @@
-<p>Hi <%= @user.email %>,</p>
+<h2>Bonjour, <%= @email %></h2>
+<p> <%= @inviter.email %> souhaite t'intégrer à sa Mif, pour y acceder il te suffit de suivre le lien ci-dessous.</p>
+<!-- <p>Une nouvelle Mif t'attend, pour y acceder il te suffit de suivre le lien ci-dessous.</p> -->
 
-<p>Bienvenue dans ta nouvelle MIF</p>
-
+<%= link_to "Rejoins notre liste", event_url(@event.token)  %>
