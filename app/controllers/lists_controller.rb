@@ -3,4 +3,8 @@ class ListsController < ApplicationController
     @lists = List.all
     @user = current_user
   end
+
+  def show
+    @list = List.find(params[:id])
+  end
 end

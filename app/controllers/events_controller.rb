@@ -25,6 +25,10 @@ class EventsController < ApplicationController
     redirect_to event_path(@event)
   end
 
+  def invite_users
+
+  end
+
   def events_params
     params.require(:event).permit(:name, :date, lists_attributes: [:title])
   end
