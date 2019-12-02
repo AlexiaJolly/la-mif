@@ -9,8 +9,10 @@ class EventsController < ApplicationController
   end
 
   def show
+
     @user = current_user
-    @event = Event.find(params[:id])
+    @event = Event.find_by(id: params[:id])
+    @event = Event.find_by(token: params[:id]) if @event.nil?
 
     @lists = @event.lists
     @ideas = Idea.all
@@ -26,6 +28,13 @@ class EventsController < ApplicationController
     @event.user = current_user
     @event.lists.last.user = current_user
     @event.save
+    redirect_to event_path(@event)
+  end
+
+  def invite_users
+    @event = Event.find(params[:id])
+    @email = params[:event][:emails]
+    UserMailer.with(email: @email, inviter: current_user, event: @event).welcome.deliver_now
     redirect_to event_path(@event)
   end
 

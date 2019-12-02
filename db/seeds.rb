@@ -129,7 +129,7 @@ puts 'Finished user'
     list:        listemuriel,
     user:        muriel,
     chosen_by:   john,
-    status:      true)
+    status:      :false)
   echarpe.photo.attach(io: photo_1, filename: 'echarpe_grise.jpg', content_type: 'image/jpg')
 
   photo_annex = URI.open("https://res.cloudinary.com/alexiajjjj/image/upload/v1575283067/La-mif/chevalet_bernard_risdx9.jpg")
