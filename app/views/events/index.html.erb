@@ -1,40 +1,46 @@
-<div class="container-fluid pt-5">
+
+<div class="row">
+       <div class="button-container">
+        <button type="button" class="button-create" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Créer un évènement</button>
+          <%= render 'event_modal', event: @event %>
+       </div>
+
+
+
+
+
+<div class="container-fluid">
   <div class="row">
-    <div class="col-12">
 
 
-
-
-
-
-
-      <% @events.each do |event| %>
-        <div class = "titre_event">
-          <h2 id="events-title">
-            <%= event.name.upcase %>
-            <small class="view"><%= link_to "Voir", event_path(event) %></small>
-          </h2>
-        </div>
+    <% @events.each do |event| %>
+      <div class = event_container >
+          <div class = "titre_event">
+            <h2 id="events-title">
+              <%= event.name.upcase %>
+              <div class="view"><%= link_to "Voir", event_path(event) %></div>
+            </h2>
+          </div>
 
         <div class="lists-container">
-
           <% event.lists.where(user: current_user).each do |list| %>
             <div class="list-idea-card">
               <div class="idea-card-title text-center d-flex align-items-center justify-content-center">
                 <h4 class='mb-0 text-uppercase'><%= list.title %></h4>
               </div>
+
               <div class="idea-card-body pt-2">
                 <div class="idea-wrappers pr-2">
                   <% list.ideas.each do |idea| %>
                     <div class="idea-wrapper mb-2">
+
                       <div class="idea-wrapper-icon">
                         <%= cl_image_tag idea.photo.key, width: 75, height: 75, crop: :fit %>
                       </div>
+
                       <div class="idea-wrapper-text ml-1">
                         <strong><%= idea.title.upcase %></strong>
                         <div class="idea-wrapper-description">
-
-
                           <%= idea.description %>
                         </div>
                       </div>
@@ -47,6 +53,7 @@
                           <%= image_tag 'picto_corbeille.png', width: 20 %>
                         <% end %>
                       </div>
+
                     </div>
                   <% end %>
                 </div>
@@ -54,16 +61,28 @@
                   <%#= link_to '#' do %>
                     <%= image_tag 'picto_add.png', width: 60 %>
                   <%# end %>
-
                 </div>
               </div>
             </div>
           <% end %>
         </div>
+      </div>
+    <% end %>
+
+
+    <% @events.each do |event| %>
+      <% event.lists.where(user: current_user).each do |list| %>
+        <%= render 'list_modal', list: list %>
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
+
+
+
+
+
+
 
 <div class="spacer"></div>
 
@@ -72,3 +91,4 @@
     <%= render 'list_modal', list: list %>
   <% end %>
 <% end %>
+
