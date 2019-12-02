@@ -1,0 +1,97 @@
+.list-card {
+  position: relative;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 800px;
+  background: white;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-top: 50px;
+  #events-title {
+    z-index: 1;
+    position: absolute;
+    transform: translateX(-50%);
+    top: -25px;
+    left: 50%;
+  }
+  &:last-child {
+  margin-right: 0;
+  }
+}
+
+.idea-title {
+  font-family: Ubuntu;
+  flex-grow: 1;
+  color: #1B2644;
+  line-height: 20px;
+  list-style-type: none;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+.idea-description {
+  font-family: Lora;
+  color: #1B2644;
+  line-height: 20px;
+  font-size: 12px;
+}
+
+
+.card-idea {
+  position: relative;
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  display: flex;
+  align-items: center;
+  border-bottom: 20px;
+  .idea-buttons {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 10px;
+  }
+}
+
+.card-idea-bloc {
+  padding-left: 16px;
+}
+
+.btn {
+width: 60px;
+height: 21.29px;
+left: 456px;
+top: 302.29px;
+background: #F2DCC5;
+font-family: Ubuntu;
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+line-height: 10px;
+color: #FFFFFF;
+display: inline;
+
+}
+
+.btn:hover {
+width: 60px;
+height: 21.29px;
+left: 456px;
+top: 302.29px;
+background: #F2DCC5;
+font-family: Ubuntu;
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+line-height: 10px;
+color: #FFFFFF;
+display: inline;
+
+}
+
+.idea-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
