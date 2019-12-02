@@ -27,10 +27,16 @@
           <% end %>
           <%= link_to '#', method: :delete do %>
             <%= image_tag 'picto_corbeille.png', width: 20 %>
-            <%# unless is_me %>
+          <% end  %>
+        <% end %>
+
+
+        <% unless @list.user.id == current_user.id %>
+          <%= simple_form_for(idea) do |f| %>
+            <button type="submit" class="<%= idea.status ? 'btn btn-primary m-2':'btn btn-selected m-2' %>">
+              <%= idea.status ? 'Choisir':'Rendre' %>
+            </button>
           <% end %>
-          <% else %>
-            <a href="/ideas/<%=idea.id%>" class='btn btn-primary'><div>Choisir</div></a>
         <% end %>
       </div>
     </div>
