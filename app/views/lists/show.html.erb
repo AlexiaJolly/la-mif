@@ -48,15 +48,13 @@
           <div class="mb-5">
             <% if @list.user != current_user %>
                 <div class="comments">
-                    <ul>
-                     <% idea.comments.each do |comment|  %>
+                    <ul id="idea_<%= idea.id %>">
+                      <% idea.comments.each do |comment|  %>
+                      <%= render "lists/comment_li", comment: comment %>
 
-                      <li>
-                       <%= cl_image_tag comment.user.photo.key, class: "avatar-comment mr-3" %>
-                      <%= comment.description %>
-                    </li>
-                     <% end %>
 
+
+                      <% end %>
                     </ul>
                 </div>
 
@@ -85,7 +83,7 @@
     <%= f.input :emails, collection: [], input_html: { class: "js-example-basic-multiple", name: "emails[]", multiple: "multiple" } %>
     <%= f.submit %>
    <% end %>
-  
+
 </div>
       <% end %>
 
