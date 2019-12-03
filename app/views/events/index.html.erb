@@ -20,11 +20,10 @@
             </h2>
           </div>
 
-        <div class="lists-container">
           <% event.lists.where(user: current_user).each do |list| %>
             <div class="list-idea-card">
               <div class="idea-card-title text-center d-flex align-items-center justify-content-center">
-                <h4 class='mb-0 text-uppercase'><%= list.title %></h4>
+                <h4 class='mb-0'><%= list.title %></h4>
               </div>
 
               <div class="idea-card-body pt-2">
@@ -63,7 +62,6 @@
               </div>
             </div>
           <% end %>
-        </div>
       </div>
     <% end %>
 

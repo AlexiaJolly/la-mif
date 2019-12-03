@@ -39,6 +39,11 @@ a:hover {
     background-color: #167FFB;
   }
 
+  &.btn-selected {
+    color: white;
+    background-color: #E84A97;
+  }
+
 }
 
 
@@ -71,107 +76,35 @@ a:hover {
   }
 }
 
-.button-tiffany {
-  /*position: absolute;*/
-  width: 318px;
-  height: 65px;
-  /*left: 368px;
-  top: 676px;*/
-  margin: 8px;
-  padding: 6px;
-  background: #8FC6C1;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  p {
-    margin-top: 14px;
-    font-family: Ubuntu;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 28px;
-    text-align: center;
-    color: #FFFFFF;
-  }
-}
-
-
-.btn-selected {
-  color: white;
-  background-color: #E84A97;
-}
-
-// .btn-selected:hover {
-//   background-color: #E84A79;
-//   color: white;
+// .button-tiffany {
+//   /*position: absolute;*/
+//   width: 318px;
+//   height: 65px;
+//   /*left: 368px;
+//   top: 676px;*/
+//   margin: 8px;
+//   padding: 6px;
+//   background: #8FC6C1;
+//   border-radius: 10px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   p {
+//     margin-top: 14px;
+//     font-family: Ubuntu;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 24px;
+//     line-height: 28px;
+//     text-align: center;
+//     color: #FFFFFF;
+//   }
 // }
 
 
 
-
-
-
-.btn-primary.btn-bleu
-{
-background: #3182FA;
-border-radius: 5px;
-border-style: none;
-font-family: Ubuntu;
-padding-bottom: 10px;
-padding-top: 10px;
-width: 200px;
-height: 50px;
-text-align:center;
-font-size: 15px;
-margin-bottom: 160px;
-
-}
-
-
-.btn-primary.btn-abricot
-{
-background: #FD9F87;
-border-radius: 5px;
-border-style: none;
-font-family: Ubuntu;
-padding-bottom: 10px;
-padding-top: 10px;
-margin-top: 10px;
-width: 150px;
-height: 40px;
-text-align:center;
-font-size: 12px;
-margin-bottom: 70px;
-
-  &:hover {
-    transition: all 0.5s ease;
-    background-color: #1B2644;
-    color: white;
-   a {
-    text-decoration: none;
-   }
-  }
- }
-
-
-
-
-
-.btn-primary.btn-bleu
-{
-background: #3182FA;
-border-radius: 5px;
-border-style: none;
-font-family: Ubuntu;
-padding-bottom: 10px;
-padding-top: 10px;
-width: 200px;
-height: 50px;
-text-align:center;
-font-size: 15px;
-margin-bottom: 160px;
-
+.pointer {
+  cursor: pointer;
 }
 
 
