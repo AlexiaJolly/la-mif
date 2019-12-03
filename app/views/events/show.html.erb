@@ -5,7 +5,9 @@
   <div class="circle-div">
     <div class="title-event" >
       <h1><%= @event.name %></h1>
-    <a href="#" class="button-coral">Partager mon événement</a>
+      <a class="button-coral btn-clipboard" data-clipboard-text='<%= event_url(@event.token) %>' >
+        Partager mon événement
+      </a>
     </div>
 
     <ul class='circle-container'>
@@ -40,7 +42,7 @@
               <% list.ideas.each do |idea| %>
 
                 <div id="modal-idea-<%=idea.id%>">
-                <%= render 'idea_modal', idea: idea, is_me:is_me %>
+                <%= render 'idea_modal', idea: idea, is_me: is_me %>
                 </div>
 
               <% end %>

@@ -22,12 +22,12 @@ john = User.create!(
 john.photo.attach(io: photo_john, filename: '_JBU3064-1_John_Schults_v2_rsouhb.jpg', content_type: 'image/jpg')
 john.save
 
-photo_marie = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574873552/_JBU1110-1_Paula_Beltran_2_uznwhi.jpg")
-marie = User.create!(
-  email: 'marie@gmail.com',
-  password: 'groseille')
-marie.photo.attach(io: photo_marie, filename: '_JBU1110-1_Paula_Beltran_2_uznwhi.jpg', content_type: 'image/jpg')
-marie.save
+# photo_marie = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574873552/_JBU1110-1_Paula_Beltran_2_uznwhi.jpg")
+# marie = User.create!(
+#   email: 'marie@gmail.com',
+#   password: 'groseille')
+# marie.photo.attach(io: photo_marie, filename: '_JBU1110-1_Paula_Beltran_2_uznwhi.jpg', content_type: 'image/jpg')
+# marie.save
 
 photo_thomas = URI.open( "https://res.cloudinary.com/alexiajjjj/image/upload/v1574872874/_JBU2368-1_Pierre_Nicoletti_v2_xobvkz.jpg")
 thomas = User.create!(
@@ -95,10 +95,10 @@ puts 'Finished user'
     user:          john,
     event:         Event.first)
 
-  listemarie = List.create!(
-    title:        'Ma liste pour Noël 2019',
-    user:          marie,
-    event:         Event.first)
+  # listemarie = List.create!(
+  #   title:        'Ma liste pour Noël 2019',
+  #   user:          marie,
+  #   event:         Event.first)
 
   listedethomas = List.create!(
     title:        'Liste de thomas',
@@ -176,8 +176,8 @@ puts 'Finished user'
     title:       "gants en cashemire",
     description: "gants en cashemire couleur bleue",
     url:         " ",
-    user:        marie,
-    list:        listemarie,
+    user:        bernard,
+    list:        listeannivB,
     chosen_by:   john,
     status:     :true)
    gants.photo.attach(io: photo_3, filename: 'gants_cashemire_hmxwb2.jpg', content_type: 'image/jpg')
@@ -211,8 +211,8 @@ puts 'Finished user'
     title:       "Livre",
     description: "Prix renaudot 2019",
     url:         " ",
-    user:        marie,
-    list:        listemarie,
+    user:        bernard,
+    list:        listeannivB,
     chosen_by:   thomas,
     status:     :true)
    renaudot.photo.attach(io: photo_6, filename: 'livre_renaudot_dwutqp.jpg', content_type: 'image/jpg')
@@ -283,7 +283,7 @@ puts 'Finished user'
     url:         " ",
     user:        paul,
     list:        listedepaul,
-    chosen_by:   marie,
+    chosen_by:   muriel,
     status:     :true)
   cie.photo.attach(io: photo_12, filename: 'set_jardinage_kkxv8r.jpg', content_type: 'image/jpg')
 
@@ -318,7 +318,7 @@ puts 'Finished user'
     url:         " ",
     user:        john,
     list:        listejohn,
-    chosen_by:   marie,
+    chosen_by:   raphael,
     status:     :true)
   monde.photo.attach(io: photo_15, filename: '321_r1ydn9.jpg', content_type: 'image/jpg')
 
@@ -339,8 +339,8 @@ puts 'Finished user'
     title:       "Horloge",
     description: "Horloge fluorescente",
     url:         " ",
-    user:        marie,
-    list:       listemarie,
+    user:        bernard,
+    list:       listeannivB,
     chosen_by:   thomas,
     status:     :true)
   nuit.photo.attach(io: photo_17, filename: '319_obyrja.jpg', content_type: 'image/jpg')

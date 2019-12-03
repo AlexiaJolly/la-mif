@@ -3,6 +3,7 @@ import "../plugins/flatpickr";
 
 import $ from 'jquery';
 import 'select2';
+import { initClipboard } from '../plugins/clipboard';
 
 const initSelector = () => {
   $(document).ready(function() {
@@ -13,3 +14,4 @@ const initSelector = () => {
 }
 
 initSelector();
+initClipboard();
