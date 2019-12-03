@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resources :ideas, only: [:new, :create]
   end
 
+  get "/giftlist", to: "ideas#index"
+  
   resources :ideas, only: [:update, :show] do
     resources :comments, only: [:create]
   end
