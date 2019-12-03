@@ -23,7 +23,7 @@
           <div class="form-group">
             <%= f.input :url, placeholder: 'URL', label: false, input_html: { class: 'form-spe' } %>
           </div>
-          <label class="btn btn-primary btn-abricot" for='<%= "idea_photo#{list.id}" %>'>Ajouter une photo</label>
+          <label class="pointer" for='<%= "idea_photo#{list.id}" %>'>📷 Ajouter une photo</label>
           <%= f.input :photo, as: :file, label: false, input_html: { class: "d-none", id: "idea_photo#{list.id}" } %>
           <%= f.submit "Ajouter mon idée", class: "btn btn-primary btn-bleu" %>
         <% end %>

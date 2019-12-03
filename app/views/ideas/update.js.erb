@@ -5,5 +5,15 @@ function replaceIdea(innerHTML) {
     newIdeaList.innerHTML = innerHTML;
 }
 
+function removeIdea() {
+    const newIdeaList = document.getElementById('modal-idea-<%=@idea.id%>');
+    while (newIdeaList.firstChild) {
+        newIdeaList.removeChild(newIdeaList.firstChild);
+    }
+}
 
-replaceIdea('<%= j render "events/idea_modal", idea: @idea, is_me:@is_me %>')
+<% if @giftlist %>
+  removeIdea();
+<% else %>
+  replaceIdea('<%= j render "events/idea_modal", idea: @idea, is_me:@is_me %>')
+<% end %>

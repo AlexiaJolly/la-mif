@@ -10,6 +10,7 @@
   z-index: 1;
 
   > h1 {
+    text-transform: uppercase;
     font-size: 60px
   }
 }
@@ -91,33 +92,6 @@
 
 .modal-header.modal-header-me {
   background-color: #FD9F87;
-}
-
-#events_show .btn-primary {
-
-    height: 35px;
-    border-radius: 5%;
-    width: 80px;
-    font-size: 14px;
-}
-
-.btn-blue {
-    background-color: #FD9F87;
-    color: white;
-    font-family: Ubuntu;
-    padding: 15px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 0.5s ease;
-
-    &:hover {
-    transition: all 0.5s ease;
-   background-color: #E84A97;
-    color: white;
-   a {
-    text-decoration: none;
-   }
-  }
 }
 
 

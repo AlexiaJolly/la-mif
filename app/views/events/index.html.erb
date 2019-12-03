@@ -1,11 +1,9 @@
 
+<div class="row justify-content-end p-3 no-gutters">
+        <button type="button" class="button-coral" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Créer un évènement</button>
 
-<div class="row">
-       <div class="button-container">
-        <button type="button" class="button-create" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Créer un évènement</button>
           <%= render 'event_modal', event: @event %>
-       </div>
-
+</div>
 
 <div class="container-fluid">
   <div class="row">
@@ -16,11 +14,10 @@
           <h2 id="events-title" class="view"><%= link_to event.name.upcase, event_path(event) %></div></h2>
 
 
-        <div class="lists-container">
           <% event.lists.where(user: current_user).each do |list| %>
             <div class="list-idea-card">
               <div class="idea-card-title text-center d-flex align-items-center justify-content-center">
-                <h4 class='mb-0 text-uppercase'><%= list.title %></h4>
+                <h4 class='mb-0'><%= list.title %></h4>
               </div>
 
               <div class="idea-card-body pt-2">
@@ -60,8 +57,8 @@
               </div>
             </div>
           <% end %>
-        </div>
-        </div>
+
+
       </div>
     <% end %>
 
@@ -75,12 +72,6 @@
 </div>
 
 
-
-
-
-
-
-<div class="spacer"></div>
 
 <% @events.each do |event| %>
   <% event.lists.where(user: current_user).each do |list| %>

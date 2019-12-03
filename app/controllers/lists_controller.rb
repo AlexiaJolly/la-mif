@@ -7,6 +7,9 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    # response en fonction du type de réponse souhaitée
+    # Cas html
+    # Cas js
   end
 
 
