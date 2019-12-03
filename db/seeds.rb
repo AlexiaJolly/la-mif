@@ -59,6 +59,13 @@ paul = User.create!(
 paul.photo.attach(io: photo_paul, filename: '_JBU2216-1_Paul_Lahana_v2_ns4bzl.jpg', content_type: 'image/jpg')
 paul.save
 
+photo_raph = URI.open('https://res.cloudinary.com/alexiajjjj/image/upload/v1575381421/raph_cowfga.jpg')
+raph = User.create!(
+  email: 'raphael@gmail.com',
+  password: 'demoday')
+raph.photo.attach(io: photo_raph, filename: 'raph_cowfga.jpg', content_type: 'image/jpg')
+raph.save
+
 
 puts 'Finished user'
 
@@ -88,11 +95,6 @@ puts 'Finished user'
     user:          john,
     event:         Event.first)
 
-   listeannivB = List.create!(
-    title:        'Ma liste pour Noël 2019',
-    user:          bernard,
-    event:         Event.second)
-
   listemarie = List.create!(
     title:        'Ma liste pour Noël 2019',
     user:          marie,
@@ -117,6 +119,17 @@ puts 'Finished user'
     title:        'Xmas 2019',
     user:          paul,
     event:         Event.first)
+
+  listederaph = List.create!(
+    title:        'Joyeux Noël 2019',
+    user:          raph,
+    event:         Event.first)
+
+#anniversaire de bernard
+   listeannivB = List.create!(
+    title:        'Ma liste d anniversaire',
+    user:          bernard,
+    event:         Event.second)
 
 
     puts 'Creating ideas...'
@@ -353,7 +366,62 @@ puts 'Finished user'
     list:        listedethomas,
     chosen_by:   thomas,
     status:     :true)
-  gants.photo.attach(io: photo_19, filename: 'gants_cashemire_hmxwb2.jpg', content_type: 'image/jpg')
+  gants.photo.attach(io: photo_19, filename: 'raquette_whz6se.jpg', content_type: 'image/jpg')
+
+  photo_20 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1575384139/hamac_pwshn4.jpg")
+  gants = Idea.create!(
+    title:       "chaise hamac",
+    description: "Qui ne rêve pas d'un hamac d'intérieur ?",
+    url:         " ",
+    user:        raph,
+    list:        listederaph,
+    chosen_by:   thomas,
+    status:     :true)
+  gants.photo.attach(io: photo_20, filename: 'hamac_pwshn4.jpg', content_type: 'image/jpg')
+
+  photo_21 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1575384162/chausson_ohpqca.jpg")
+  chausson = Idea.create!(
+    title:       "chausson hydratant",
+    description: "pour profiter de l'hiver au chaud et confortablement",
+    url:         " ",
+    user:        raph,
+    list:        listederaph,
+    chosen_by:   john,
+    status:     :true)
+  chausson.photo.attach(io: photo_21, filename: 'chausson_ohpqca.jpg', content_type: 'image/jpg')
+
+  photo_22 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1575384150/diffuseur_ozvguy.jpg")
+  diffuseur = Idea.create!(
+    title:       "chaise hamac",
+    description: "pour profiter de l'hiver au chaud et confortablement",
+    url:         " ",
+    user:        raph,
+    list:        listederaph,
+    chosen_by:   muriel,
+    status:     :true)
+  diffuseur.photo.attach(io: photo_22, filename: 'diffuseur_ozvguy.jpg', content_type: 'image/jpg')
+
+  photo_23 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1575385575/poncho_ygbqqj.jpg")
+  massage = Idea.create!(
+    title:       "poncho",
+    description: "ll vous enveloppe de douceur et de chaleur pour affronter les frimas de l'hiver",
+    url:         " ",
+    user:        raph,
+    list:        listederaph,
+    chosen_by:   paul,
+    status:     :true)
+  massage.photo.attach(io: photo_23, filename: 'poncho_ygbqqj.jpg', content_type: 'image/jpg')
+
+  photo_24 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1575384167/bougie_kvizen.jpg")
+  bougie = Idea.create!(
+    title:       "Bougie design",
+    description: "Une bougie bien jolie !",
+    url:         " ",
+    user:        raph,
+    list:        listederaph,
+    chosen_by:   bernard,
+    status:     :true)
+  bougie.photo.attach(io: photo_24, filename: 'bougie_kvizen.jpg', content_type: 'image/jpg')
 
 puts 'Finished lists...'
 
