@@ -11,6 +11,9 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+  <%= stylesheet_pack_tag 'application' %>
+  <!-- <link rel="stylesheet" href="node_modules/select2/dist/css/select2.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
   </head>
   <body id="<%= params[:controller] %>_<%= params[:action] %>">
     <%= render 'shared/navbar' %>
@@ -21,3 +24,4 @@
     <%= render 'shared/footer' %>
   </body>
 </html>
+

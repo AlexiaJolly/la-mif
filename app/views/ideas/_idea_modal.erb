@@ -1,0 +1,39 @@
+<div class="idea-container <%= idea.bought ? 'bought' : '' %> pl-2">
+  <div class="d-flex idea-card border-light align-content-center justify-content-center m-2 p-2">
+
+    <div class="d-flex">
+
+      <div class="d-flex align-items-center justify-content-center mr-3">
+        <%= cl_image_tag idea.photo.key, height: 150, width: 150 if idea.photo %>
+      </div>
+
+      <div class="idea-wrapper-text ml-1 pt-2">
+        <strong><%= idea.title.upcase %></strong>
+        <div class="idea-wrapper-description">
+          <%= idea.description %>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="forms-container d-flex align-items-center justify-content-center flex-column">
+      <%= link_to 'Acheter', bought_idea_path(idea), method: :patch, class: "btn btn-selected m-2" %>
+
+      <%= simple_form_for(idea, remote: true) do |f| %>
+
+        <%= f.input :chosen_by_id, as: :hidden, input_html: { value:  nil } %>
+        <%= f.input :status, as: :hidden, input_html: { value: false } %>
+        <%= f.input :bought, as: :hidden, input_html: { value: false } %>
+        <input class='d-none' type="text" name="giftlist" value=true>
+        <button type="submit" class="btn btn-selected m-2">
+          Rendre
+        </button>
+      <% end %>
+    </div>
+
+    <%#= simple_form_for(idea, remote:true) do |f| %>
+      <%#= f.input :bought, as: :boolean%>
+    <%# end %>
+
+  </div>
+</div>

@@ -1,15 +1,12 @@
 
 <div class="row justify-content-end p-3 no-gutters">
         <button type="button" class="button-coral" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Créer un évènement</button>
+
           <%= render 'event_modal', event: @event %>
 </div>
 
-
-
-
 <div class="container-fluid">
   <div class="row">
-
 
     <% @events.each do |event| %>
       <div class = event_container >
@@ -75,12 +72,6 @@
 </div>
 
 
-
-
-
-
-
-<div class="spacer"></div>
 
 <% @events.each do |event| %>
   <% event.lists.where(user: current_user).each do |list| %>

@@ -33,8 +33,12 @@ class EventsController < ApplicationController
 
   def invite_users
     @event = Event.find(params[:id])
-    @email = params[:event][:emails]
-    UserMailer.with(email: @email, inviter: current_user, event: @event).welcome.deliver_now
+    @emails = params[:emails].reject(&:empty?)
+
+    @emails.each do |email|
+      UserMailer.with(email: email, inviter: current_user, event: @event).welcome.deliver_now
+    end
+
     redirect_to event_path(@event)
   end
 
