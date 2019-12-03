@@ -1,4 +1,5 @@
 class IdeasController < ApplicationController
+
   def index
     @ideas = Idea.all
   end
@@ -30,10 +31,10 @@ class IdeasController < ApplicationController
     @is_me = @idea.list.user == current_user
     if @idea.chosen_by_id == current_user.id
       @idea.chosen_by_id = nil
-      @idea.status = false
+      @idea.status = true
     else
       @idea.chosen_by_id = current_user.id
-      @idea.status = true
+      @idea.status = false
     end
     @idea.save
     if @idea.save

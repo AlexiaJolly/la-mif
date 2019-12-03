@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   end
 
   resources :ideas, only: [:update, :show]
+
+  get "/giftlist", to: "ideas#index"
 end

@@ -1,0 +1,26 @@
+<div class="idea-card">
+  <li class="d-flex idea-card border-light align-items-center justify-content-between">
+
+    <div class="d-flex">
+
+      <div class="align-items-center justify-content-center mr-3">
+        <%= cl_image_tag idea.photo.key, height: 150, width: 150 if idea.photo %>
+      </div>
+
+      <div class="idea-wrapper-text ml-1">
+        <strong><%= idea.title.upcase %></strong>
+        <div class="idea-wrapper-description">
+          <%= idea.description %>
+        </div>
+      </div>
+
+    </div>
+
+    <%= simple_form_for(idea, remote: true) do |f| %>
+      <button type="submit" class="<%= idea.status ? 'btn btn-primary m-2':'btn btn-selected m-2' %>">
+        <%= idea.status ? 'Choisir':'Rendre' %>
+      </button>
+    <% end %>
+
+  </li>
+</div>
