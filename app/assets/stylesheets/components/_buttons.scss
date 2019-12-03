@@ -8,7 +8,6 @@ a:hover {
 }
 
 .btn {
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,10 +42,10 @@ a:hover {
     color: white;
     background-color: #E84A97;
   }
+  &.btn-bleu {
+    width: 160px !important;
+  }
 }
-
-
-
 
 .button-coral {
   padding: 20px 30px;
