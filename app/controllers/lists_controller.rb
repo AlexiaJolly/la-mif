@@ -7,8 +7,9 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-
-    redirect_to list_path(@list.id)
+    # response en fonction du type de réponse souhaitée
+    # Cas html
+    # Cas js
   end
 
 
