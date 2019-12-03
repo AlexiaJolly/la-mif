@@ -77,12 +77,6 @@
 
 
 
-
-
-
-
-<div class="spacer"></div>
-
 <% @events.each do |event| %>
   <% event.lists.where(user: current_user).each do |list| %>
     <%= render 'list_modal', list: list %>

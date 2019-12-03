@@ -1,6 +1,7 @@
 
 <div class="title p-2 m-4">
   <h1>Giftlist</h1>
+
 </div>
 
   <div class="list-idea-card">
@@ -10,9 +11,9 @@
     </div>
 
     <div class="idea-card-body pt-4">
-      <div class="idea-wrappers pr-2">
+      <div class="idea-wrappers">
 
-        <% @ideas.where(user: current_user, status: true).each do |idea| %>
+        <% @ideas.where(chosen_by_id: current_user.id, status: true).each do |idea| %>
 
           <div id="modal-idea-<%=idea.id%>">
             <%= render 'idea_modal', idea: idea %>
