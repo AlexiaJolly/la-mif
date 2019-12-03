@@ -12,12 +12,6 @@ class IdeasController < ApplicationController
     @list = current_user.lists.find(params[:list_id])
   end
 
-  def new_comment
-    @comment = Comment.new
-    @list = current_user.lists.find(params[:list_id])
-    @idea.list = @list
-  end
-
   def create
     @list = current_user.lists.find(params[:list_id])
     @idea = Idea.new(ideas_params)
