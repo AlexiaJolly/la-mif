@@ -10,13 +10,16 @@
     </div>
   </div>
   <% unless is_me %>
-    <%= simple_form_for(idea, remote: true) do |f| %>
-      <%= f.input :chosen_by_id, as: :hidden, input_html: { value: idea.chosen_by_id.nil? ? current_user.id : nil } %>
-      <%= f.input :status, as: :hidden, input_html: { value: !idea.status } %>
-      <button type="submit" class="<%= idea.status ? 'btn btn-selected m-2':'btn btn-primary m-2' %>">
-        <%= idea.status ? 'Rendre':'Choisir' %>
-      </button>
-    <% end  %>
+    <% if idea.chosen_by_id.nil? || idea.chosen_by == current_user %>
+      <%= simple_form_for(idea, remote: true) do |f| %>
+        <%= f.input :chosen_by_id, as: :hidden, input_html: { value: idea.chosen_by_id.nil? ? current_user.id : nil } %>
+        <%= f.input :status, as: :hidden, input_html: { value: !idea.status } %>
+        <button type="submit" class="<%= idea.status ? 'btn btn-selected m-2':'btn btn-primary m-2' %>">
+          <%= idea.status ? 'Rendre':'Choisir' %>
+        </button>
+      <% end  %>
+    <% else %>
+      <span>Chosen by <%= idea.chosen_by.email %></span>
+    <% end %>
   <% end %>
-
 </li>
