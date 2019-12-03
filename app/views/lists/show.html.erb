@@ -1,4 +1,4 @@
 <%= simple_form_for @list.event, url: invite_users_event_path(@list.event), method: :post  do |f| %>
-    <%= f.input :emails, placeholder: 'user@domain.com' %>
+    <%= f.input :emails, collection: [], input_html: { class: "js-example-basic-multiple", name: "emails[]", multiple: "multiple" } %>
     <%= f.submit %>
 <% end %>
