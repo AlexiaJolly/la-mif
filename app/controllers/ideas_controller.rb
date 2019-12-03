@@ -27,7 +27,6 @@ class IdeasController < ApplicationController
   end
 
   def update
-
     @idea = Idea.find(params[:id])
     @is_me = @idea.list.user == current_user
     @giftlist = params[:giftlist]

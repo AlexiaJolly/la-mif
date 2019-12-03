@@ -8,7 +8,6 @@ a:hover {
 }
 
 .btn {
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,6 +41,9 @@ a:hover {
   &.btn-selected {
     color: white;
     background-color: #E84A97;
+  }
+  &.btn-bleu {
+    width: 160px !important;
   }
 }
 
