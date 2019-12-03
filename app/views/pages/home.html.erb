@@ -13,9 +13,9 @@
             Inscrivez les membres de votre famille sur la Mif et partagez ensemble vos idées de cadeaux !
           </p>
         </div>
-          <div class="button-container">
             <button type="button" class="button-coral" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap"><p>Créer un évènement</p></button>
-          </div>
+<!--           <div class="button-container">
+          </div> -->
             <%# @events.each do |event| %>
               <%# event.lists.where(user: current_user).each do |list| %>
                 <%= render 'events/event_modal', event: @event %>

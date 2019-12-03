@@ -6,37 +6,6 @@
   flex-wrap: wrap;
 }
 
-.button-create {
-  position: absolute;
-  width: 200px;
-  height: 50px;
-  left: 1250px;
-  margin: 8px;
-  padding: 6px;
-  background: #FD9F87;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: white;
-  font-size: 16px;
-  font-family: Ubuntu;
-  padding: 15px 20px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: all 0.5s ease;
-
-    &:hover {
-    transition: all 0.5s ease;
-    background-color: #E84A97;
-    color: white;
-   a {
-    text-decoration: none;
-   }
-  }
-}
-
-
 .row {
   display: flex;
 }
@@ -108,7 +77,6 @@
   font-weight: bold;
   font-size: 36px;
   color: #1B2644;
-  margin-left: 40px;
 }
 
 .view {

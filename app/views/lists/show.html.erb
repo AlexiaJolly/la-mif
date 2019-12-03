@@ -1,104 +1,84 @@
 
+<div class = list_container>
+
+    <ul class="list-card">
+      <h2 id="events-title">
+        <%= @list.event.name.upcase %>
+      </h2>
+
+      <% @list.ideas.each do |idea| %>
+
+        <div class="card-idea d-flex flex-column">
+          <div class="d-flex justify-content-between mb-4">
+
+            <div class="d-flex">
+              <%= cl_image_tag idea.photo.key, class: 'idea-img mr-4' if idea.photo %>
+              <div class= "card-idea-bloc">
+                <div class = "idea-title">
+                  <%= idea.title.upcase %>
+                </div>
+                <div class = "idea-description"><%= idea.description.upcase %></div>
+                <a href=" " class= "btn"><span>Voir plus</span></a>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center idea-buttons">
 
 
-<ul class="list-card p-4">
-  <h2 id="events-title">
-    <%= @list.event.name.upcase %>
-  </h2>
-  <% @list.ideas.each do |idea| %>
+              <% if @list.user.id == current_user.id %>
+                <%= link_to '#' do %>
+                  <%= image_tag 'picto_modifier.png', width: 40 %>
+                <% end %>
+                <%= link_to '#', method: :delete do %>
+                  <%= image_tag 'picto_corbeille.png', width: 20 %>
+                <% end  %>
+              <% end %>
 
-    <div class= "card-idea p-4 border-bottom">
-      <%= cl_image_tag idea.photo.key, class: 'idea-img' if idea.photo %>
-      <div class= "card-idea-bloc">
-        <div class = "idea-title">
-          <%= idea.title.upcase %>
+
+              <% unless @list.user.id == current_user.id %>
+                <%= simple_form_for(idea) do |f| %>
+                  <button type="submit" class="<%= idea.status ? 'btn btn-primary m-2':'btn btn-selected m-2' %>">
+                    <%= idea.status ? 'Choisir':'Rendre' %>
+                  </button>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <% if @list.user != current_user %>
+                <div class="comments">
+                    <ul>
+                     <% idea.comments.each do |comment|  %>
+                      <li><%= comment.description %></li>
+                     <% end %>
+                    </ul>
+                </div>
+
+                <div class= "comments-form">
+                  <%= simple_form_for([idea, Comment.new]) do |f| %>
+                    <%= f.input :description, placeholder: 'Mon commentaire ...' %>
+                    <%= f.submit %>
+                  <% end %>
+                </div>
+            <% end %>
+          </div>
+
         </div>
-        <div class = "idea-description"><%= idea.description.upcase %></div>
-        <a href=" " class= "btn"><span>Voir plus</span></a>
-      </div>
-
-      <div class="d-flex align-items-center idea-buttons">
-
-        <% if @list.user != current_user %>
 
 
-
-          <ul>
-           <% idea.comments.each do |comment|  %>
-           <li> <%  comment.description%> </li>
-           <%  end %>
-          </ul>
-
-
-
-          <%= simple_form_for([idea, Comment.new]) do |f| %>
-            <%= f.input :description, placeholder: 'Commentaires' %>
-            <%= f.submit %>
-          <% end %>
-        <% end %>
-
-
-        <% if @list.user.id == current_user.id %>
-          <%= link_to '#' do %>
-            <%= image_tag 'picto_modifier.png', width: 40 %>
-          <% end %>
-          <%= link_to '#', method: :delete do %>
-            <%= image_tag 'picto_corbeille.png', width: 20 %>
-          <% end  %>
-        <% end %>
-
-
-        <% unless @list.user.id == current_user.id %>
-          <%= simple_form_for(idea) do |f| %>
-            <button type="submit" class="<%= idea.status ? 'btn btn-primary m-2':'btn btn-selected m-2' %>">
-              <%= idea.status ? 'Choisir':'Rendre' %>
-            </button>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-
-
-
-  <% end %>
-  <div class="btn-center grow-card" style="display: flex; align-items: center; justify-content: center;">
-    <%= link_to '#' do %>
-      <%= image_tag 'picto_add.png', width: 60%>
-    <% end %>
-  </div>
-
-</ul>
-
-
-
-<%= simple_form_for @list.event, url: invite_users_event_path(@list.event), method: :post  do |f| %>
-    <%= f.input :emails, placeholder: 'user@domain.com' %>
-    <%= f.submit %>
-<% end %>
-
-
-
-
-<% @list.ideas.each do |idea| %>
-  <li class="d-flex m-4">
-    <div class="idea-card">
-      <div class="d-flex align-items-center justify-content-center">
-        <%= cl_image_tag idea.photo.key, height: 150, width: 150, crop: :fill if idea.photo %>
-      </div>
-      <div class="idea-title">
-        <h5> <strong> <%= idea.title %> </strong><h5/>
-        <p><%= idea.description %></p>
-        <div class="idea-comments">
-          <% idea.comments.each do |comment| %>
-            <%= comment.description %>
-          <% end %>
-        </div>
-      </div>
-      <%= simple_form_for([idea, Comment.new]) do |f| %>
-        <%= f.input :description %>
-        <%= f.submit %>
       <% end %>
-    </div>
-  </li>
+      <div class="btn-center grow-card" style="display: flex; align-items: center; justify-content: center;">
+        <%= link_to '#' do %>
+          <%= image_tag 'picto_add.png', width: 60%>
+        <% end %>
+      </div>
+    </ul>
 
-<% end %>
+</div>
+
+    <%= simple_form_for @list.event, url: invite_users_event_path(@list.event), method: :post  do |f| %>
+            <%= f.input :emails, placeholder: 'user@domain.com' %>
+            <%= f.submit %>
+        <% end %>
+
