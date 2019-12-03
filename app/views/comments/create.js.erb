@@ -1,0 +1,5 @@
+function refreshPage() {
+  const ideaComment = document.getElementById("idea_<%= @comment.idea.id %>");
+  ideaComment.insertAdjacentHTML("beforeend", "<%= j render 'lists/comment_li', comment: @comment %>");
+}
+refreshPage();
