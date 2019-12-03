@@ -22,5 +22,8 @@ module LaMif
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    #postmark
+    config.action_mailer.delivery_method = :postmark
+  config.action_mailer.postmark_settings = { :api_token => "1cf75422-a722-4140-bbd2-665af84339be" }
   end
 end

@@ -10,12 +10,9 @@
 
     <% @events.each do |event| %>
       <div class = event_container >
-          <div class = "titre_event">
-            <h2 id="events-title">
-              <%= event.name.upcase %>
-              <div class="view"><%= link_to "Voir", event_path(event) %></div>
-            </h2>
-          </div>
+        <div class = "titre_event">
+          <h2 id="events-title" class="view"><%= link_to event.name.upcase, event_path(event) %></div></h2>
+
 
           <% event.lists.where(user: current_user).each do |list| %>
             <div class="list-idea-card">
@@ -56,9 +53,12 @@
                     <%= image_tag 'picto_add.png', width: 60 %>
                   <%# end %>
                 </div>
+
               </div>
             </div>
           <% end %>
+
+
       </div>
     <% end %>
 

@@ -10,6 +10,7 @@ gem 'puma'
 gem 'rails', '6.0.1'
 gem 'redis'
 gem 'letter_opener', group: :development
+gem 'postmark-rails'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
