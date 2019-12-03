@@ -75,16 +75,6 @@ a {
 
 }
 
-.button-container {
-  display: flex;
-  padding: 10px;
-}
-
-.button-container p {
-  color: #1B2644;
-  padding: 10px;
-}
-
 @media only screen and (max-width: 900px) {
   .large {
     margin-top: 100px;
@@ -103,6 +93,5 @@ a {
   .text-container {
     position: relative;
   }
-  .button-container {
-  }
+
 }

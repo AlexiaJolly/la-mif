@@ -7,14 +7,49 @@ a:hover {
   text-decoration: none;
 }
 
+.btn {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 80px;
+  height: 40px;
+  background: #F2DCC5;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 10px;
+  color: #FFFFFF;
+  opacity: 0.8;
+  transition: all 0.5s ease;
+
+  &:hover {
+    opacity: 1;
+    transition: all 0.5s ease;
+    color: white;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.btn-primary {
+    background-color: #167FFB;
+  }
+
+
+  &.btn-selected {
+    color: white;
+    background-color: #E84A97;
+  }
+
+
+
+
 .button-coral {
-  /*position: absolute;*/
-  width: 250px;
-  height: 65px;
- /* left: 134px;
-  top: 676px;*/
-  margin: 8px;
-  padding: 6px;
+  padding: 20px 30px;
   background: #FD9F87;
   border-radius: 10px;
   display: flex;
@@ -23,60 +58,53 @@ a:hover {
   cursor: pointer;
   border-style: none;
   color: white;
+  opacity: 0.8;
+  transition: all 0.5s ease;
 
-
-
-    p {
-      font-family: Ubuntu;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: normal;
-      line-height: 28px;
-      text-align: center;
-      color: white;
-
-    }
-}
-
-.button-tiffany {
-  /*position: absolute;*/
-  width: 318px;
-  height: 65px;
-  /*left: 368px;
-  top: 676px;*/
-  margin: 8px;
-  padding: 6px;
-  background: #8FC6C1;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   p {
-    margin-top: 14px;
-    font-family: Ubuntu;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 28px;
-    text-align: center;
-    color: #FFFFFF;
+    margin: 0;
+  }
+
+  &:hover {
+    opacity: 1;
+    transition: all 0.5s ease;
+    color: white;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+// .button-tiffany {
+//   /*position: absolute;*/
+//   width: 318px;
+//   height: 65px;
+//   /*left: 368px;
+//   top: 676px;*/
+//   margin: 8px;
+//   padding: 6px;
+//   background: #8FC6C1;
+//   border-radius: 10px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   p {
+//     margin-top: 14px;
+//     font-family: Ubuntu;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 24px;
+//     line-height: 28px;
+//     text-align: center;
+//     color: #FFFFFF;
+//   }
+// }
+
+
+
+.pointer {
+  cursor: pointer;
 }
 
-.btn-selected {
-  color: white;
-  background-color: #E84A97;
-}
 
-.btn-selected:hover {
-  transition: all 0.5s ease;
-  background-color: #E84A79;
-  color: white;
-}

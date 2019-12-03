@@ -1,22 +1,27 @@
-.list-card {
+.list_container {
   position: relative;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 800px;
-  background: white;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  margin-left: 50px;
-  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   #events-title {
-    z-index: 1;
     position: absolute;
     transform: translateX(-50%);
-    top: -25px;
+    top: 0.9%;
     left: 50%;
   }
-  &:last-child {
-  margin-right: 0;
-  }
+}
+
+
+
+.list-card {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 900px;
+  height: 600px;
+  background: white;
+  margin: 50px auto;
+  padding: 50px 80px;
+  overflow-y:scroll;
+  height: 500px;
 }
 
 .idea-title {
@@ -37,61 +42,62 @@
   font-size: 12px;
 }
 
+.idea-img {
+  width: 100px;
+  height:100px;
+  object-fit: contain;
+}
 
-.card-idea {
-  position: relative;
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  display: flex;
-  align-items: center;
-  border-bottom: 20px;
-  .idea-buttons {
-    position: absolute;
-    transform: translateY(-50%);
-    top: 50%;
-    right: 10px;
+#new_comment {
+  label {
+    display: none;
   }
 }
 
-.card-idea-bloc {
-  padding-left: 16px;
+#new_comment textarea,
+.comments li {
+    height: 30px;
+    border: none;
+    background: #e6e6e6;
+    border-radius: 10px;
+    font-size: 12px;
+    padding: 7px 14px;
+    color: grey;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: between;
+  }
+.comments ul {
+  padding: 0;
+  list-style: none;
 }
 
-.btn {
-width: 60px;
-height: 21.29px;
-left: 456px;
-top: 302.29px;
-background: #F2DCC5;
-font-family: Ubuntu;
-font-style: normal;
-font-weight: normal;
-font-size: 10px;
-line-height: 10px;
-color: #FFFFFF;
-display: inline;
 
+.lien {
+  color: #1B2644;
+  font-size: 12px;
+  font-family: Lora;
 }
 
-.btn:hover {
-width: 60px;
-height: 21.29px;
-left: 456px;
-top: 302.29px;
-background: #F2DCC5;
-font-family: Ubuntu;
-font-style: normal;
-font-weight: normal;
-font-size: 10px;
-line-height: 10px;
-color: #FFFFFF;
-display: inline;
+// .comments {
+// height: 10px;
 
+// }
+
+// .comments-form {
+// height: 20px;
+
+// }
+
+.avatar-comment {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    border-color: white;
+    object-fit: cover;
+    left: -15px;
+    position: relative;
 }
 
-.idea-img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-}

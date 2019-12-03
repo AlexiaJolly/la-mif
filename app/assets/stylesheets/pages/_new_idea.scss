@@ -43,49 +43,7 @@ line-height: 31px;
 color: #1E2B4B;
 }
 
-.btn-primary.btn-abricot
-{
-background: #FD9F87;
-border-radius: 5px;
-border-style: none;
-font-family: Ubuntu;
-padding-bottom: 10px;
-padding-top: 10px;
-margin-top: 10px;
-width: 150px;
-height: 40px;
-text-align:center;
-font-size: 12px;
-margin-bottom: 70px;
 
-  &:hover {
-    transition: all 0.5s ease;
-    background-color: #1B2644;
-    color: white;
-   a {
-    text-decoration: none;
-   }
-  }
- }
-
-
-
-
-.btn-primary.btn-bleu
-{
-background: #3182FA;
-border-radius: 5px;
-border-style: none;
-font-family: Ubuntu;
-padding-bottom: 10px;
-padding-top: 10px;
-width: 200px;
-height: 50px;
-text-align:center;
-font-size: 15px;
-margin-bottom: 160px;
-
-}
 
 .form-spe
 {
@@ -97,13 +55,6 @@ border-width: thin;
     font-weight: 300;
   }
 }
-
-.btn-container
-{
-padding-top: 40px;
-}
-
-
 
 .modal-body {
   padding: 2rem;
