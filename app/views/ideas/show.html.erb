@@ -1,7 +1,8 @@
-<div class="card-container mt-5">
+<div class="alignement d-flex justify-content-center align-items-center">
+  <div class="idea-container mt-5">
       <div class="idea-card">
         <div class="d-flex align-items-center justify-content-center">
-          <%= cl_image_tag @idea.photo.key, height: 150, width: 150, crop: :fill if @idea.photo %>
+          <%= cl_image_tag @idea.photo.key, crop: :fill if @idea.photo %>
         </div>
         <div class="box">
           <div class="idea-text">
@@ -11,4 +12,5 @@
           <a href="/"><div class="btn btn-primary p-2">Home</div></a>
         </div>
       </div>
+  </div>
 </div>

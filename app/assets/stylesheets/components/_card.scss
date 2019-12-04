@@ -33,6 +33,19 @@ a {
     object-fit: contain;
   }
 
+  .profile-img {
+    img {
+      width: 70px;
+      height: 70px;
+      margin-left: 12px;
+      border-radius: 50%;
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+      border:  2px  solid;
+      border-color: white;
+      object-fit: cover;
+    }
+  }
+
 
 }
 
@@ -42,6 +55,14 @@ a {
   radius: 5%;
   width: 450px;
   min-height: 560px;
+}
+
+.idea-container {
+  background-color: white;
+  border: 1px solid lightgray;
+  radius: 5%;
+  width: 450px;
+  min-height: 220px;
 }
 
 

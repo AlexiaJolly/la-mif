@@ -17,9 +17,13 @@
         <button type="submit" class="<%= idea.status ? 'btn btn-selected m-2' : 'btn btn-primary m-2' %>">
           <%= idea.status ? 'Rendre' : 'Choisir' %>
         </button>
-      <% end  %>
+      <% end %>
     <% else %>
-      <span>Chosen by <%= idea.chosen_by.email %></span>
+      <div class="d-flex align-items-center profile-img">
+        <%= link_to idea_path(idea) do %>
+          <%= cl_image_tag idea.chosen_by.photo.key, class: "avatar-small"%>
+        <% end %>
+      </div>
     <% end %>
   <% end %>
 </li>
