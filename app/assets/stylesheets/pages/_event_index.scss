@@ -26,7 +26,7 @@
 // }
 .list-idea-card {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 340px;
+  width: 420px;
   background: white;
 
   margin-right: 20px;
@@ -48,25 +48,40 @@
 .idea-wrapper {
   display: flex;
   justify-content: space-between;
-  min-height: 100px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+
 }
+
 .idea-wrapper-icon {
+height: 100%;
+object-fit: cover;
+margin-right: 10px;
+margin-left: 10px;
   // display: flex;
   // align-items: center;
   // justify-content: center;
+
+  & img {
+    width: 50px;
+    margin-left: 15px;
+  }
 }
+
+
 .idea-wrapper-text {
   font-family: Ubuntu;
   flex-grow: 1;
   color: #1B2644;
-  line-height: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .idea-wrapper-description {
   font-family: Lora;
   color: #1B2644;
+  margin-top: 5px;
   line-height: 20px;
+  font-size: 15px;
 }
 #events-title {
   font-family: Ubuntu;

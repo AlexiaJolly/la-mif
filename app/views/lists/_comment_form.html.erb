@@ -1,0 +1,6 @@
+<%= simple_form_for([idea, Comment.new], remote: true) do |f| %>
+  <%= f.input :description, as: :string, placeholder: 'Mon commentaire ...' %>
+  <div class="d-none" >
+  <%= f.submit %>
+  </div>
+<% end %>
