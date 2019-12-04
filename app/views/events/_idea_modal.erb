@@ -20,9 +20,9 @@
       <% end %>
     <% else %>
       <div class="d-flex align-items-center profile-img">
-        <%= link_to idea_path(idea) do %>
+        <%#= link_to 'idea_path(idea)' do %>
           <%= cl_image_tag idea.chosen_by.photo.key, class: "avatar-small"%>
-        <% end %>
+        <%# end %>
       </div>
     <% end %>
   <% end %>

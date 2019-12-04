@@ -19,7 +19,7 @@
                   <%= idea.title.upcase %>
                 </div>
                 <div class = "idea-description"><%= idea.description.upcase %></div>
-                <a href=" " class= "lien">Voir plus</a>
+                <a href="<%= idea.url %>" target="_blank" class= "lien">Voir plus</a>
               </div>
             </div>
 
@@ -34,7 +34,7 @@
                   <%= image_tag 'picto_corbeille.png', width: 20 %>
                 <% end  %>
               <% end %>
-              
+
 
               <% is_me = @list.user == current_user %>
 
