@@ -1,8 +1,7 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
-# Examples:
-#
+# Examples·#
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
@@ -271,7 +270,7 @@ puts 'Finished user'
   photo_12 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1575037550/set_jardinage_kkxv8r.jpg")
   cie = Idea.create!(
     title:       "Kit jardinage",
-    description: "Pour avoir la main verte enfin !",
+    description: "Pour avoir la main verte enfin",
     url:         "https://www.natureetdecouvertes.com/jardin/jardinage/outillage-accessoires-jardinage/set-outils-de-jardinage-91109860?gclsrc=aw.ds&&gclid=EAIaIQobChMI56L_5vGb5gIVhvdRCh154geOEAQYASABEgK0l_D_BwE&gclsrc=aw.ds",
     user:        paul,
     list:        listedepaul,
