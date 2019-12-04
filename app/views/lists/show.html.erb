@@ -1,13 +1,10 @@
 
 <div class="list_container">
-    <h2 id="events-title">
-      <%= @list.event.name.upcase %>
-      <div class= "position-tete">
-      <%= cl_image_tag @list.user.photo.key, class: "avatar-small mr-3" %>
-    </h2>
-      </div>
+  <div class="basile">
+    <h2 id="events-title"><%= @list.event.name.upcase %></h2>
+    <%= cl_image_tag @list.user.photo.key, class: "avatar-small mr-3" %>
+  </div>
     <ul class="list-card">
-
       <% @list.ideas.each do |idea| %>
         <div class="card-idea d-flex flex-column">
           <div class="d-flex justify-content-between mb-4">
@@ -61,7 +58,11 @@
 
           <div class="mb-5">
             <% if @list.user != current_user %>
-                <div class="comments">
+
+
+              <details>
+                <summary class="titre-commentaires"> Commentaires </summary>
+                <div class="comments" >
                     <ul id="idea_<%= idea.id %>">
                       <% idea.comments.each do |comment|  %>
                         <%= render "lists/comment_li", comment: comment %>
@@ -73,6 +74,8 @@
                   <%= render "lists/comment_form", idea: idea %>
 
                 </div>
+              </details>
+
             <% end %>
           </div>
 
@@ -102,6 +105,8 @@
 
 <!-- modal idea -->
   <%= render 'lists/modal_white', list: @list %>
+
+
 
 
 
