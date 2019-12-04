@@ -47,7 +47,7 @@ class IdeasController < ApplicationController
 
   def bought
     @idea = Idea.find(params[:id])
-    @idea.update(bought: true)
+    @idea.update(bought: !@idea.bought)
     redirect_to '/giftlist'
   end
 
