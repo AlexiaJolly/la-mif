@@ -34,7 +34,7 @@
                   <%= image_tag 'picto_corbeille.png', width: 20 %>
                 <% end  %>
               <% end %>
-              
+
 
               <% is_me = @list.user == current_user %>
 
@@ -83,14 +83,14 @@
 
       <% if @list.user == current_user %>
       <!-- modal add idea -->
-      <div class="grow-card btn-center" type="button" data-toggle="modal" data-target='#<%= "staticBackdrop#{@list.id}" %>' style="display: flex; align-items: center; justify-content: center;">
-        <%= image_tag 'picto_add.png', width: 60 %>
+      <div class="grow-card btn-center" type="" data-toggle="modal" data-target='#<%= "staticBackdrop#{@list.id}" %>' style="display: flex; align-items: center; justify-content: center;">
+        <%= image_tag 'picto_add.png', width: 60, class: "picto-add" %>
       </div>
 
 <div class= "mt-3">
    <%= simple_form_for @list.event, url: invite_users_event_path(@list.event), method: :post  do |f| %>
     <%= f.input :emails, collection: [], input_html: { class: "js-example-basic-multiple", name: "emails[]", multiple: "multiple" } %>
-    <%= f.submit %>
+    <%= f.submit "Envoyer", class: "btn btn-primary btn-bleu" %>
    <% end %>
 
 </div>
@@ -101,7 +101,7 @@
 </div>
 
 <!-- modal idea -->
-  <%= render 'events/list_modal', list: @list %>
+  <%= render 'lists/modal_white', list: @list %>
 
 
 
