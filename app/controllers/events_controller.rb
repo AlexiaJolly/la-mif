@@ -28,7 +28,7 @@ class EventsController < ApplicationController
     @event.user = current_user
     @event.lists.last.user = current_user
     @event.save
-    redirect_to event_path(@event)
+    redirect_to list_path(@event.lists.first.id)
   end
 
   def invite_users

@@ -2,11 +2,11 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <p class="modal-title nouvelle-idee" id="exampleModalLongTitle">NOUVEL EVENEMENT</p>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <div class="modal-header-white">
+        <button type="button" class="close p-4" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+        <p class="modal-title nouvelle-idee" id="exampleModalLongTitle">NOUVEL EVENEMENT</p>
       </div>
       <div class="modal-body">
         <div class="topo">
@@ -23,7 +23,7 @@
           <% end %>
         </div>
           <%= f.input :date, as: :string, required: false, label: false, placeholder: "Indiquer la date des festivités:", input_html: {class: "datepicker"} %>
-          <%= f.submit "Créer mon évènement", class: "btn btn-primary btn-bleu" %>
+          <%= f.submit "Créer", class: "btn btn-primary btn-bleu" %>
         <% end %>
 
       </div>
