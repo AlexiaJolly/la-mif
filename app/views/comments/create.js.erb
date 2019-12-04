@@ -2,4 +2,12 @@ function refreshPage() {
   const ideaComment = document.getElementById("idea_<%= @comment.idea.id %>");
   ideaComment.insertAdjacentHTML("beforeend", "<%= j render 'lists/comment_li', comment: @comment %>");
 }
+
+
+
+function refreshForm(innerHTML) {
+  const newCommentForm = document.getElementById("form_idea_<%= @comment.idea.id%>");
+  newCommentForm.innerHTML = innerHTML;
+}
 refreshPage();
+refreshForm("<%= j render 'lists/comment_form', idea: @comment.idea %>");
