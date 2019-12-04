@@ -61,7 +61,7 @@ paul.save
 
 photo_raph = URI.open('https://res.cloudinary.com/alexiajjjj/image/upload/v1575381421/raph_cowfga.jpg')
 raph = User.create!(
-  email: 'raphael@gmail.com',
+  email: 'raphaele@gmail.com',
   password: 'demoday')
 raph.photo.attach(io: photo_raph, filename: 'raph_cowfga.jpg', content_type: 'image/jpg')
 raph.save
