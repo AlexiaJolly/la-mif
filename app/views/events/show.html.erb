@@ -5,7 +5,7 @@
   <div class="circle-div">
     <div class="title-event" >
       <h1><%= @event.name %></h1>
-      <a class="button-coral btn-clipboard" data-clipboard-text='<%= event_url(@event.token) %>' >
+      <a class="button-coral btn-clipboard text-white" data-clipboard-text='<%= event_url(@event.token) %>' >
         Partager mon événement
       </a>
     </div>
@@ -29,7 +29,7 @@
             <div class="modal-header <%= 'modal-header-me' if is_me %>">
               <div class="d-flex align-items-center">
                 <%= cl_image_tag list.user.photo.key, class: "avatar-small mr-3", data: { toggle: "modal", target: "#modal-list-#{list.id}" } %>
-                <h3><%= link_to "#{list.title}", list_path(list) %></h3>
+                <h3 class="hoover-list"><%= link_to "#{list.title}", list_path(list) %></h3>
               </div>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
