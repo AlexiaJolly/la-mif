@@ -318,7 +318,7 @@ puts 'Finished user'
     url:         " ",
     user:        john,
     list:        listejohn,
-    chosen_by:   raphael,
+    chosen_by:   raph,
     status:     :true)
   monde.photo.attach(io: photo_15, filename: '321_r1ydn9.jpg', content_type: 'image/jpg')
 
