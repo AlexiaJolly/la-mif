@@ -290,7 +290,6 @@ puts 'Finished user'
     status:      :true)
   telescope.photo.attach(io: photo_13, filename: '320-2_zk7swd.jpg', content_type: 'image/jpg')
 
-  # Here we write article.photo.attach(...) because we wrote has_one_attached :photo in app/models article.rb
   photo_14 = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574938512/324_d4yrhe.jpg")
   lego = Idea.create!(
     title:       "Lego Robots",
