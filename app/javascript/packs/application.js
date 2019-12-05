@@ -8,10 +8,12 @@ import { initClipboard } from '../plugins/clipboard';
 const initSelector = () => {
   $(document).ready(function() {
       $('.js-example-basic-multiple').select2({
-        tags: true
+        tags: true,
+        placeholder: 'Emails'
       });
   });
 }
 
 initSelector();
 initClipboard();
+
