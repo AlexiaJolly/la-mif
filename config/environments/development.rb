@@ -62,5 +62,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
     # Add this line next to existing config.action_mailer settings
-  config.action_mailer.delivery_method = :postmark
+  config.action_mailer.delivery_method = :letter_opener
 end
