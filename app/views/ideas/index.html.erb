@@ -8,7 +8,7 @@
 
     <div class="list-card2">
 
-      <div class="idea-card-body d-flex justify-content-center align-items-center pt-2">
+      <div class="idea-card-body d-flex justify-content-center align-items-center">
         <div class="idea-wrappers">
 
           <% @ideas.where(chosen_by_id: current_user.id, status: true).each do |idea| %>

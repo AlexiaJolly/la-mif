@@ -72,7 +72,6 @@
 
                 <div id= "form_idea_<%= idea.id%>">
                   <%= render "lists/comment_form", idea: idea %>
-
                 </div>
               </details>
 
@@ -106,6 +105,21 @@
 <!-- modal idea -->
   <%= render 'lists/modal_white', list: @list %>
 
+
+  <% content_for :after_js do %>
+    <script>
+
+      scrollLastMessageIntoView();
+      App['list_<%= @list.id %>'] = App.cable.subscriptions.create({ channel: 'ListsChannel', list_id: <%= @list.id %>}, {
+        received: (data) => {
+          console.log(data);
+          const ideaComment = document.getElementById(`idea_${data.idea_id}`);
+          ideaComment.insertAdjacentHTML("beforeend", data.comment_partial);
+          scrollLastMessageIntoView();
+        }
+      })
+    </script>
+  <% end %>
 
 
 
