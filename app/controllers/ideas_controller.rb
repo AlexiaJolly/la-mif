@@ -33,7 +33,7 @@ class IdeasController < ApplicationController
   def update
     @idea = Idea.find(params[:id])
     @is_me = @idea.list.user == current_user
-    @giftlist = params[:giftlist]
+    @list = params[:list]
     @bought = params[:bought]
 
     if @idea.update(ideas_params)
