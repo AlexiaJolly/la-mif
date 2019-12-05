@@ -4,7 +4,8 @@
   <div class="circle-div">
     <div class="title-event" >
       <h1><%= @event.name %></h1>
-      <a class="button-coral btn-clipboard text-white" data-clipboard-text='<%= event_url(@event.token) %>' >
+      <a class="button-coral btn-clipboard text-white" data-clipboard-text='<%= event_url(@event.token) %>'
+        data-toggle="tooltip" data-title='Copié' >
         Partager mon événement
       </a>
     </div>
