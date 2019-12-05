@@ -5,6 +5,11 @@ function replaceIdea(innerHTML) {
     newIdeaList.innerHTML = innerHTML;
 }
 
+function replaceListIdea(innerHTML) {
+    const newIdeaList = document.getElementById('idea-<%=@idea.id%>');
+    newIdeaList.innerHTML = innerHTML;
+}
+
 function removeIdea() {
     const newIdeaList = document.getElementById('modal-idea-<%=@idea.id%>');
     while (newIdeaList.firstChild) {
@@ -12,8 +17,8 @@ function removeIdea() {
     }
 }
 
-<% if @giftlist %>
-  removeIdea();
+<% if @list %>
+replaceListIdea('<%= j render "lists/idea_modal", idea: @idea, is_me:@is_me %>')
 <% else %>
   replaceIdea('<%= j render "events/idea_modal", idea: @idea, is_me:@is_me %>')
 <% end %>
