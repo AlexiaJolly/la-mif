@@ -15,9 +15,9 @@
   }
 }
 .avatar-bordered {
-    width: 140px;
-    height: 143px;
-    border-radius: 48%;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     border:  4px  solid;
     border-color: #8FC6C1;
@@ -78,7 +78,7 @@
 }
 
 .circle-container {
-  @include on-circle($item-count: 6, $circle-size: 37em, $item-size: 10em);
+  @include on-circle($item-count: 6, $circle-size: 34em, $item-size: 10em);
   margin: 5em auto 0;
   border: solid 5px;
   border-color : #F2DCC5;
