@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :ideas, only: [:new, :create]
   end
 
-  get "/giftlist", to: "ideas#index"
+  get '/giftlist', to: 'ideas#index'
   
   resources :ideas, only: [:update, :show] do
     member do
