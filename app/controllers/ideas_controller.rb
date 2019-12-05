@@ -13,6 +13,10 @@ class IdeasController < ApplicationController
     @list = current_user.lists.find(params[:list_id])
   end
 
+  def edit
+    @idea = Idea.find(params[:id])
+  end
+
   def create
     @list = current_user.lists.find(params[:list_id])
     @idea = Idea.new(ideas_params)
@@ -49,6 +53,12 @@ class IdeasController < ApplicationController
     @idea = Idea.find(params[:id])
     @idea.update(bought: !@idea.bought)
     redirect_to '/giftlist'
+  end
+
+  def destroy
+    @idea = Idea.find(params[:id])
+    @idea.destroy
+    redirect_to '/events'
   end
 
   def ideas_params

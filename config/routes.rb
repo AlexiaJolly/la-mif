@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get '/giftlist', to: 'ideas#index'
   
-  resources :ideas, only: [:update, :show] do
+  resources :ideas, only: [:edit, :update, :show, :destroy] do
     member do
       patch "bought"
     end
