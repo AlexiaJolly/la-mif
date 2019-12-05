@@ -91,7 +91,7 @@
 
 <div class= "mt-3">
    <%= simple_form_for @list.event, url: invite_users_event_path(@list.event), method: :post  do |f| %>
-    <%= f.input :emails, collection: [], input_html: { class: "js-example-basic-multiple", name: "emails[]", multiple: "multiple" } %>
+    <%= f.input :emails, collection: [], input_html: { class: "js-example-basic-multiple", name: "emails[]", multiple: "multiple"}, label: "Invite ta MIF à l'événement !" %>
     <%= f.submit "Envoyer", class: "btn btn-primary btn-bleu" %>
    <% end %>
 

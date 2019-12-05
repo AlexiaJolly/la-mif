@@ -15,14 +15,16 @@
 
         <%= simple_form_for event do |f| %>
         <div class="form-group">
-          <%= f.input :name, placeholder: 'Nom de mon évènement', label: false, input_html: { class: 'form-spe' } %>
+
+          <%= f.input :name, placeholder: 'Mon évènement', label: false, input_html: { class: 'form-spe' } %>
         </div>
         <div class="form-group">
           <%= f.simple_fields_for :lists do |l| %>
-            <%= l.input :title, placeholder: 'Nom de ma liste', label: false, input_html: { class: 'form-spe' }  %>
+            <%= l.input :title, placeholder: 'Ma liste', label: false, input_html: { class: 'form-spe' }  %>
+
           <% end %>
         </div>
-          <%= f.input :date, as: :string, required: false, label: false, placeholder: "Indiquer la date des festivités:", input_html: {class: "datepicker"} %>
+          <%= f.input :date, as: :string, required: false, label: false, placeholder: "Date des festivités", input_html: {class: "datepicker"} %>
           <%= f.submit "Créer", class: "btn btn-primary btn-bleu" %>
         <% end %>
 

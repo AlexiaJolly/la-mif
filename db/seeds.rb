@@ -132,7 +132,7 @@ puts 'Finished user'
     url:         "https://www.asos.fr/asos-design/asos-design-longue-echarpe-tissee-ultra-douce-a-franges-gris/prd/11826276?affid=24693&channelref=product+search&mk=abc&ppcadref=6931128475%7C79807354236%7Cpla-294682000766&cpn=6931128475&_cclid=Google_EAIaIQobChMIs8TZxvCb5gIVT8DeCh0WMQNAEAQYAyABEgKTTPD_BwE&gclid=EAIaIQobChMIs8TZxvCb5gIVT8DeCh0WMQNAEAQYAyABEgKTTPD_BwE",
     list:        listemuriel,
     user:        muriel,
-    chosen_by:   john,
+    chosen_by:   raph,
     status:      :false)
   echarpe.photo.attach(io: photo_1, filename: 'echarpe_grise.jpg', content_type: 'image/jpg')
 
@@ -215,7 +215,7 @@ puts 'Finished user'
     url:         "https://www.philibertnet.com/fr/livre-jeu/65806-escape-game-saurez-vous-vous-evader-9782317015236.html?gclid=EAIaIQobChMI0uX9uvGb5gIVWoXVCh0VMwdqEAQYASABEgLVGPD_BwE",
     list:       listedeBernard,
     user:        bernard,
-    chosen_by:   muriel,
+    chosen_by:   raph,
     status:      :true)
   escape.photo.attach(io: photo_7, filename: '320_lpnmql.jpg', content_type: 'image/jpg')
 
@@ -227,7 +227,7 @@ puts 'Finished user'
     url:         "https://www.redbubble.com/fr/people/wishtopia/works/27171586-yoga-meditation-chakra?frame_color=black&hand_color=white&p=clock&utm_source=google&utm_medium=cpc&utm_campaign=g.pla+notset&country_code=FR&gclid=EAIaIQobChMIx6ChnPKb5gIVBJ7VCh1WvgbDEAQYBSABEgJOHfD_BwE",
     list:        listemuriel,
     user:        muriel,
-    chosen_by:   bernard,
+    chosen_by:   raph,
     status:     :true)
   orloge.photo.attach(io: photo_8, filename: '15204880_P1_ma2tar.jpg', content_type: 'image/jpg')
 
