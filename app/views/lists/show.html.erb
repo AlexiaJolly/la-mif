@@ -1,7 +1,7 @@
 
 <div class="list_container">
   <div class="basile">
-    <h2 id="events-title"><%= @list.event.name.upcase %></h2>
+    <h2 id="events-title" class="view"><%= link_to @list.event.name.upcase, event_path(@list.event) %></h2>
     <%= cl_image_tag @list.user.photo.key, class: "avatar-small mr-3" %>
   </div>
     <ul class="list-card">

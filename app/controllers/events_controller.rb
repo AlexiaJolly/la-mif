@@ -9,7 +9,6 @@ class EventsController < ApplicationController
   end
 
   def show
-
     @user = current_user
     @event = Event.find_by(id: params[:id])
     @event = Event.find_by(token: params[:id]) if @event.nil?
