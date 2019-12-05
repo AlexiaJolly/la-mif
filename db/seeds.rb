@@ -349,7 +349,7 @@ puts 'Finished user'
     url:         "https://www.natureetdecouvertes.com/thes-epicerie/a-faire-soi-meme/a-faire-pousser/jardin-potager-d-interieur-lilo-4-61168140?gclsrc=aw.ds&&gclid=EAIaIQobChMInIrd8O-b5gIVB57VCh3WXQwOEAQYASABEgLrlvD_BwE&gclsrc=aw.ds",
     user:        paul,
     list:        listedepaul,
-    chosen_by:   paul,
+    # chosen_by:   paul,
     status:     :true)
   hibou.photo.attach(io: photo_18, filename: 'pret_a_pousser_ax46w7.jpg', content_type: 'image/jpg')
 
