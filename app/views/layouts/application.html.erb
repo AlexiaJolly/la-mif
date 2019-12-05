@@ -17,7 +17,9 @@
     <meta property="og:description" content="<%= meta_description %>" />
     <meta property="og:site_name" content="<%= meta_title %>" />
 
-    <link rel='icon' href='assets/logo_cadeau.png' type='image/x-icon'/ >
+    <%= favicon_link_tag %>
+
+    <link rel='icon' href='assets/logo_cadeau.png' type='image/x-icon' >
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all' %>
