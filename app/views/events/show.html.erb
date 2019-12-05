@@ -16,6 +16,7 @@
         <li>
           <div class='grow'>
             <%= cl_image_tag list.user.photo.key, class: "avatar-bordered #{'avatar-bordered-me' if is_me}", data: { toggle: "modal", target: "#modal-list-#{list.id}" } %>
+            <span class="user-name"><%= list.user.name %></span>
           </div>
         </li>
       <% end %>

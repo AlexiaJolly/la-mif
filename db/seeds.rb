@@ -17,7 +17,8 @@ puts 'Creating user...'
 photo_john = URI.open("https://res.cloudinary.com/alexiajjjj/image/upload/v1574872880/_JBU3064-1_John_Schults_v2_rsouhb.jpg" )
 john = User.create!(
   email: 'john@gmail.com',
-  password: '123456789')
+  password: '123456789',
+  name: 'John')
 john.photo.attach(io: photo_john, filename: '_JBU3064-1_John_Schults_v2_rsouhb.jpg', content_type: 'image/jpg')
 john.save
 
@@ -25,7 +26,8 @@ john.save
 photo_pierre = URI.open( "https://res.cloudinary.com/alexiajjjj/image/upload/v1574872874/_JBU2368-1_Pierre_Nicoletti_v2_xobvkz.jpg")
 pierre = User.create!(
   email: 'thomas.durand@gmail.com',
-  password: 'azertyazerty')
+  password: 'azertyazerty',
+  name: 'Pierre')
 pierre.photo.attach(io: photo_pierre, filename: '_JBU2368-1_Pierre_Nicoletti_v2_xobvkz.jpg', content_type: 'image/jpg')
 pierre.save
 
@@ -33,7 +35,8 @@ pierre.save
 photo_bernard = URI.open("https://res.cloudinary.com/alexiajjjj/image/upload/v1574937236/_JBU1933-1_Bernard_Le_Moullec_v2_fgbzz5.jpg" )
 bernard = User.create!(
   email: 'bernard@gmail.com',
-  password: '123456789')
+  password: '123456789',
+  name: 'Bernard')
 bernard.photo.attach(io: photo_bernard, filename: '_JBU1933-1_Bernard_Le_Moullec_v2_fgbzz5.jpg', content_type: 'image/jpg')
 bernard.save
 
@@ -41,21 +44,24 @@ bernard.save
 photo_muriel = URI.open ("https://res.cloudinary.com/alexiajjjj/image/upload/v1574937236/_JBU1968-1_Muriel_Oger_v2_vnm1fx.jpg")
 muriel = User.create!(
   email: 'muriel@gmail.com',
-  password: 'vanille')
+  password: 'vanille',
+  name: 'Muriel')
 muriel.photo.attach(io: photo_muriel, filename: '_JBU1968-1_Muriel_Oger_v2_vnm1fx.jpg', content_type: 'image/jpg')
 muriel.save
 
 photo_paul = URI.open( "https://res.cloudinary.com/alexiajjjj/image/upload/v1574937236/_JBU2216-1_Paul_Lahana_v2_ns4bzl.jpg")
 paul = User.create!(
   email: 'paul@gmail.com',
-  password: 'qwerty')
+  password: 'qwerty',
+  name: 'Paul')
 paul.photo.attach(io: photo_paul, filename: '_JBU2216-1_Paul_Lahana_v2_ns4bzl.jpg', content_type: 'image/jpg')
 paul.save
 
 photo_raph = URI.open('https://res.cloudinary.com/alexiajjjj/image/upload/v1575381421/raph_cowfga.jpg')
 raph = User.create!(
   email: 'raphaele@gmail.com',
-  password: 'demoday')
+  password: 'demoday',
+  name: 'Raphaële')
 raph.photo.attach(io: photo_raph, filename: 'raph_cowfga.jpg', content_type: 'image/jpg')
 raph.save
 

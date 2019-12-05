@@ -37,7 +37,19 @@
 }
 
 
-.grow { transition: all .2s ease-in-out; }
+.grow {
+  position: relative;
+  transition: all .2s ease-in-out;
+  .user-name {
+    position: absolute;
+    transform: translateX(-50%);
+    bottom: -30px;
+    left: 45%;
+    letter-spacing: .3rem;
+    color: #1A2644;
+  }
+}
+
 .grow:hover { transform: scale(1.2); }
 
 @mixin on-circle($item-count, $circle-size, $item-size) {
