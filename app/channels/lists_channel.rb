@@ -3,8 +3,4 @@ class ListsChannel < ApplicationCable::Channel
     stream_from "list_#{params[:list_id]}"
     # stream_from "some_channel"
   end
-
-
-
-
 end
