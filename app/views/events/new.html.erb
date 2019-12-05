@@ -12,7 +12,9 @@
   <div class="centered">
 <div class="pop-up-new-product">
   <h5 class="nouvelle-idee">NOUVEL EVENEMENT</h5>
-    <p>Je crée ma nouvelle fiesta ici !</p>
+
+  <div class="form-container mt-5 mb-4">
+  <p>Je crée ma nouvelle fiesta ici !</p>
 
   <%= simple_form_for @event do |f| %>
     <%= f.input :name, placeholder: 'Nom de mon évènement :', label: false, input_html: { class: 'form-spe' } %>
@@ -20,7 +22,8 @@
       <%= l.input :title, placeholder: 'Nom de ma liste :', label: false, input_html: { class: 'form-spe' }  %>
     <% end %>
     <%= f.input :date, placeholder: 'Date :', label: false, input_html: { class: 'form-spe' } %>
-    <%= f.submit "Créer mon évènement", class: "btn btn-primary btn-bleu" %>
+    <%= f.submit "Créer", class: "btn btn-primary btn-bleu" %>
   <% end %>
+  </div>
 </div>
   </div>

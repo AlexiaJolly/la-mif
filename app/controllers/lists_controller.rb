@@ -7,6 +7,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+
     # response en fonction du type de réponse souhaitée
     # Cas html
     # Cas js
@@ -14,7 +15,7 @@ class ListsController < ApplicationController
 
 
   def lists_params
-    params.require(:list).permit(:title)
+    params.require(:list).permit(:title, :description)
   end
 
 

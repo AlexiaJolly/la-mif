@@ -1,6 +1,6 @@
-
-<div class="container large">
-  <div class="row">
+<div class="d-flex align-items-center wrapper-yield">
+  <div class="container">
+    <div class="row">
       <div class="left-container col-md-6 col-12">
         <div class="text-container p-2">
           <h1 id="home-title">
@@ -13,20 +13,17 @@
             Inscrivez les membres de votre famille sur la Mif et partagez ensemble vos idées de cadeaux !
           </p>
         </div>
-            <button type="button" class="button-coral" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap"><p>Créer un évènement</p></button>
-<!--           <div class="button-container">
-          </div> -->
-            <%# @events.each do |event| %>
-              <%# event.lists.where(user: current_user).each do |list| %>
-                <%= render 'events/event_modal', event: @event %>
-              <%# end %>
-            <%# end %>
-        </div>
+        <button type="button" class="button-coral" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
+          <p>Créer un évènement</p>
+        </button>
+      </div>
       <div class="image-container col-md-6 col-12">
         <%= image_tag ("xmas_home.jpg") %>
       </div>
+    </div>
   </div>
 </div>
+<%= render 'events/event_modal', event: @event %>
 
 
 

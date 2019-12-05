@@ -1,0 +1,26 @@
+
+<div class="centered">
+  <div class="gift-container">
+    <div class="title mt-2 text-center">
+      <h1> 🎁 Ma Liste de course 🎁</h1>
+
+    </div>
+
+    <div class="list-card2">
+
+      <div class="idea-card-body d-flex justify-content-center align-items-center pt-2">
+        <div class="idea-wrappers">
+
+          <% @ideas.where(chosen_by_id: current_user.id, status: true).each do |idea| %>
+
+            <div id="modal-idea-<%=idea.id%>">
+              <%= render 'idea_modal', idea: idea %>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
