@@ -75,6 +75,15 @@ margin-left: 10px;
   flex-grow: 1;
   color: #1B2644;
   padding-bottom: 20px;
+  font-size: 18px;
+}
+
+.gift-title {
+  font-family: Ubuntu;
+  flex-grow: 1;
+  color: #1B2644;
+  padding-bottom: 20px;
+  font-size: 24px;
 }
 
 .idea-wrapper-description {
@@ -84,6 +93,15 @@ margin-left: 10px;
   line-height: 20px;
   font-size: 12px;
 }
+
+.gift-description {
+  font-family: Lora;
+  color: #1B2644;
+  margin-top: 5px;
+  line-height: 20px;
+  font-size: 18px;
+}
+
 #events-title {
   font-family: Ubuntu;
   font-style: normal;
