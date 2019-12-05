@@ -2,7 +2,9 @@
 body {
   background: #F2DCC5;
 }
-
+.wrapper-yield {
+  min-height: calc(100vh - 85px - 96px);
+}
 // html {
 //   position: relative;
 //   min-height: 100%;
@@ -73,11 +75,6 @@ a {
     top: 192px;*/
     /*background: url(xmas_home.jpg);*/
 
-}
-
-
-.container {
-  min-height: calc(100vh - 192px);
 }
 
 @media only screen and (max-width: 900px) {

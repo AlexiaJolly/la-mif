@@ -1,13 +1,10 @@
 
 <div class="list_container">
-    <h2 id="events-title">
-      <%= @list.event.name.upcase %>
-      <div class= "position-tete">
-      <%= cl_image_tag @list.user.photo.key, class: "avatar-small mr-3" %>
-    </h2>
-      </div>
+  <div class="basile">
+    <h2 id="events-title"><%= @list.event.name.upcase %></h2>
+    <%= cl_image_tag @list.user.photo.key, class: "avatar-small mr-3" %>
+  </div>
     <ul class="list-card">
-
       <% @list.ideas.each do |idea| %>
         <div class="card-idea d-flex flex-column">
           <div class="d-flex justify-content-between mb-4">
@@ -19,7 +16,7 @@
                   <%= idea.title.upcase %>
                 </div>
                 <div class = "idea-description"><%= idea.description.upcase %></div>
-                <a href=" " class= "lien">Voir plus</a>
+                <a href="<%= idea.url %>" target="_blank" class= "lien">Voir plus</a>
               </div>
             </div>
 
@@ -34,7 +31,7 @@
                   <%= image_tag 'picto_corbeille.png', width: 20 %>
                 <% end  %>
               <% end %>
-              
+
 
               <% is_me = @list.user == current_user %>
 
@@ -61,7 +58,11 @@
 
           <div class="mb-5">
             <% if @list.user != current_user %>
-                <div class="comments">
+
+
+              <details>
+                <summary class="titre-commentaires"> Commentaires </summary>
+                <div class="comments" >
                     <ul id="idea_<%= idea.id %>">
                       <% idea.comments.each do |comment|  %>
                         <%= render "lists/comment_li", comment: comment %>
@@ -73,6 +74,8 @@
                   <%= render "lists/comment_form", idea: idea %>
 
                 </div>
+              </details>
+
             <% end %>
           </div>
 
@@ -83,14 +86,14 @@
 
       <% if @list.user == current_user %>
       <!-- modal add idea -->
-      <div class="grow-card btn-center" type="button" data-toggle="modal" data-target='#<%= "staticBackdrop#{@list.id}" %>' style="display: flex; align-items: center; justify-content: center;">
-        <%= image_tag 'picto_add.png', width: 60 %>
+      <div class="grow-card btn-center" type="" data-toggle="modal" data-target='#<%= "staticBackdrop#{@list.id}" %>' style="display: flex; align-items: center; justify-content: center;">
+        <%= image_tag 'picto_add.png', width: 60, class: "picto-add" %>
       </div>
 
 <div class= "mt-3">
    <%= simple_form_for @list.event, url: invite_users_event_path(@list.event), method: :post  do |f| %>
     <%= f.input :emails, collection: [], input_html: { class: "js-example-basic-multiple", name: "emails[]", multiple: "multiple" } %>
-    <%= f.submit %>
+    <%= f.submit "Envoyer", class: "btn btn-primary btn-bleu" %>
    <% end %>
 
 </div>
@@ -101,7 +104,9 @@
 </div>
 
 <!-- modal idea -->
-  <%= render 'events/list_modal', list: @list %>
+  <%= render 'lists/modal_white', list: @list %>
+
+
 
 
 
