@@ -13,7 +13,7 @@
 
           <% @ideas.where(chosen_by_id: current_user.id, status: true).each do |idea| %>
 
-            <div id="modal-idea-<%=idea.id%>">
+            <div id="modal-idea-<%= idea.id %>">
               <%= render 'idea_modal', idea: idea %>
             </div>
 

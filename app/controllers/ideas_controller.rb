@@ -1,7 +1,7 @@
 class IdeasController < ApplicationController
 
   def index
-    @ideas = Idea.all
+    @ideas = Idea.all.order(id: :asc)
   end
 
   def show
@@ -52,7 +52,14 @@ class IdeasController < ApplicationController
   def bought
     @idea = Idea.find(params[:id])
     @idea.update(bought: !@idea.bought)
-    redirect_to '/giftlist'
+    respond_to do |format|
+      format.html do
+        redirect_to '/giftlist'
+      end
+      format.js #
+    end
+
+
   end
 
   def destroy

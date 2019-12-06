@@ -26,9 +26,11 @@
         <%= link_to '✅', bought_idea_path(idea), method: :patch %>
         </div>
       <% else %>
+
         <div class="emoji mr-4">
         <%= link_to '⬜️', bought_idea_path(idea), method: :patch %>
         </div>
+
       <% end %>
 
       <%#= simple_form_for(idea, remote: true) do |f| %>
