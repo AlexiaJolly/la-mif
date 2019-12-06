@@ -6,65 +6,10 @@
   </div>
     <ul class="list-card">
       <% @list.ideas.each do |idea| %>
-        <div class="card-idea d-flex flex-column">
-          <div class="d-flex justify-content-between mb-4">
-
-            <div class="d-flex">
-              <%= cl_image_tag idea.photo.key, class: 'idea-img mr-4' if idea.photo %>
-              <div class= "card-idea-bloc">
-                <div class = "idea-title">
-                  <%= idea.title.upcase %>
-                </div>
-                <div class = "idea-description"><%= idea.description.upcase %></div>
-                <a href="<%= idea.url %>" target="_blank" class= "lien">Voir plus</a>
-              </div>
-            </div>
-
-            <div class="d-flex align-items-center idea-buttons mb-4">
-
-
-              <% if @list.user.id == current_user.id %>
-                <%= link_to '#' do %>
-                  <%= image_tag 'picto_modifier.png', width: 40 %>
-                <% end %>
-                <%= link_to '#' do %>
-                  <%= image_tag 'picto_corbeille.png', width: 20 %>
-                <% end  %>
-              <% end %>
-
-
-              <% is_me = @list.user == current_user %>
-
-              <div id="idea-<%=idea.id%>">
-                <%= render 'idea_modal', idea: idea, is_me: is_me %>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="mb-5">
-            <% if @list.user != current_user %>
-
-
-              <details>
-                <summary class="titre-commentaires"> Commentaires </summary>
-                <div class="comments" >
-                    <ul id="idea_<%= idea.id %>">
-                      <% idea.comments.each do |comment|  %>
-                        <%= render "lists/comment_li", comment: comment %>
-                      <% end %>
-                    </ul>
-                </div>
-
-                <div id= "form_idea_<%= idea.id%>">
-                  <%= render "lists/comment_form", idea: idea %>
-                </div>
-              </details>
-
-            <% end %>
-          </div>
-
+        <div id="idea_container_<%= idea.id%>">
+          <%= render 'lists/list_show_ideacontent', list: @list, idea: idea, current_user: current_user %>
         </div>
+
 
 
       <% end %>
@@ -98,10 +43,16 @@
       scrollLastMessageIntoView();
       App['list_<%= @list.id %>'] = App.cable.subscriptions.create({ channel: 'ListsChannel', list_id: <%= @list.id %>}, {
         received: (data) => {
-          console.log(data);
-          const ideaComment = document.getElementById(`idea_${data.idea_id}`);
-          ideaComment.insertAdjacentHTML("beforeend", data.comment_partial);
-          scrollLastMessageIntoView();
+          if (data.comment_partial) {
+            const ideaComment = document.getElementById(`idea_${data.idea_id}`);
+            ideaComment.insertAdjacentHTML("beforeend", data.comment_partial);
+            scrollLastMessageIntoView();
+          }
+
+          if (data.idea_content_partial) {
+            const ideaContent = document.getElementById(`idea_container_${data.idea_id}`);
+            ideaContent.innerHTML = data.idea_content_partial;
+          }
         }
       })
     </script>
