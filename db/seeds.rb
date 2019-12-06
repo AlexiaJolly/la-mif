@@ -267,8 +267,8 @@ puts 'Finished user'
     description: "Superbes couteaux à viande",
     url:         "https://www.mathon.fr/cat-couteaux/couteaux-a-steaks-viandes/Jean-Dubost-Coffret-6-couteaux-Laguiole-Stand-Up-bois-naturel-PID471091.aspx?esl-k=Google|nu|c287850046021|m|k486736414746|p|t|dc|a59760087482|g1507021088&gclid=EAIaIQobChMI5rGI9fGb5gIVRPlRCh0GMgJTEAQYASABEgLMyvD_BwE",
     user:       bernard,
-    list:       listedeBernard,
-    chosen_by:   pierre,
+    list:       listejohn,
+    chosen_by:   muriel,
     status:     :true)
   boite.photo.attach(io: photo_11, filename: '328_kkfea8.jpg', content_type: 'image/jpg')
 
@@ -314,7 +314,7 @@ puts 'Finished user'
     url:         "https://www.oxybul.com/jeux-pour-apprendre/histoire-et-geographie/geographie/coffret-a-la-decouverte-du-monde/produit/337892?LGWCODE=337892;46203;5537&&cmpid=SN-GOO-ShoppingCSS-tous-produits-prospection&gclid=EAIaIQobChMIotz3qfCb5gIVDkPTCh1xjw5GEAQYASABEgIv0PD_BwE&gclsrc=aw.ds",
     user:        john,
     list:        listejohn,
-    chosen_by:   raph,
+    #chosen_by:   raph,
     status:     :true)
   monde.photo.attach(io: photo_15, filename: '321_r1ydn9.jpg', content_type: 'image/jpg')
 
@@ -349,7 +349,7 @@ puts 'Finished user'
     url:         "https://www.natureetdecouvertes.com/thes-epicerie/a-faire-soi-meme/a-faire-pousser/jardin-potager-d-interieur-lilo-4-61168140?gclsrc=aw.ds&&gclid=EAIaIQobChMInIrd8O-b5gIVB57VCh3WXQwOEAQYASABEgLrlvD_BwE&gclsrc=aw.ds",
     user:        paul,
     list:        listedepaul,
-    # chosen_by:   paul,
+    chosen_by:   bernard,
     status:     :true)
   hibou.photo.attach(io: photo_18, filename: 'pret_a_pousser_ax46w7.jpg', content_type: 'image/jpg')
 
