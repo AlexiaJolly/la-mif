@@ -38,7 +38,7 @@ class EventsController < ApplicationController
       UserMailer.with(email: email, inviter: current_user, event: @event).welcome.deliver_now
     end
 
-    redirect_to event_path(@event)
+    redirect_to events_path
   end
 
   def events_params
