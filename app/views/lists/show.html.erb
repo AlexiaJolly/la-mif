@@ -34,7 +34,7 @@
 
 
               <% is_me = @list.user == current_user %>
-              
+
               <div id="idea-<%=idea.id%>">
                 <%= render 'idea_modal', idea: idea, is_me: is_me %>
               </div>
