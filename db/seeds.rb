@@ -186,7 +186,7 @@ puts 'Finished user'
     url:         "https://www.cultura.com/casque-major-iii-bt-noir-7340055352369.html",
     user:        john,
     list:        listejohn,
-    chosen_by:   john,
+    chosen_by:   bernard,
     status:     :true)
    casque.photo.attach(io: photo_4, filename: 'casque_audio_qpjfyp.jpg', content_type: 'image/jpg')
 
