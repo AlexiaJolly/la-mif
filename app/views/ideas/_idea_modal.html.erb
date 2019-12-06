@@ -26,7 +26,7 @@
         <%= link_to '✅', bought_idea_path(idea), method: :patch %>
         </div>
       <% else %>
-        <%= link_to ' Acheter ', bought_idea_path(idea), method: :patch, class: "btn btn-selected m-2" %>
+        <%= link_to ' Acheter ', bought_idea_path(idea), method: :patch, remote: true, class: "btn btn-selected m-2" %>
       <% end %>
 
       <%#= simple_form_for(idea, remote: true) do |f| %>

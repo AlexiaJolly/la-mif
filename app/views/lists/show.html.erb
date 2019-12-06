@@ -27,14 +27,14 @@
                 <%= link_to '#' do %>
                   <%= image_tag 'picto_modifier.png', width: 40 %>
                 <% end %>
-                <%= link_to '#', method: :delete do %>
+                <%= link_to '#' do %>
                   <%= image_tag 'picto_corbeille.png', width: 20 %>
                 <% end  %>
               <% end %>
 
 
               <% is_me = @list.user == current_user %>
-              
+
               <div id="idea-<%=idea.id%>">
                 <%= render 'idea_modal', idea: idea, is_me: is_me %>
               </div>

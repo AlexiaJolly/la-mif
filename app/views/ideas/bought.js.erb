@@ -1,0 +1,6 @@
+function refreshPage() {
+  const ideaContainer = document.getElementById('modal-idea-<%= @idea.id %>');
+  ideaContainer.innerHTML = "<%= j render 'ideas/idea_modal', idea: @idea %>";
+}
+
+refreshPage();
