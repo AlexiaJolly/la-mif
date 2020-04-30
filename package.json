@@ -10,7 +10,7 @@
     "clipboard": "^2.0.4",
     "flatpickr": "^4.6.3",
     "install": "^0.13.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.16.0",
     "select2": "^4.0.12",
     "turbolinks": "^5.2.0"
